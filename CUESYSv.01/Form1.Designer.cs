@@ -286,8 +286,8 @@
             // bookRoomToolStripMenuItem
             // 
             this.bookRoomToolStripMenuItem.Name = "bookRoomToolStripMenuItem";
-            this.bookRoomToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.bookRoomToolStripMenuItem.Text = "Book Room";
+            this.bookRoomToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bookRoomToolStripMenuItem.Text = "Book Flights";
             this.bookRoomToolStripMenuItem.Click += new System.EventHandler(this.bookRoomToolStripMenuItem_Click);
             // 
             // viewBookingsToolStripMenuItem
