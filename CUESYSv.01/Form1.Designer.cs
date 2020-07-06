@@ -93,15 +93,30 @@
             this.tbCustomer = new System.Windows.Forms.TextBox();
             this.tbCost = new System.Windows.Forms.TextBox();
             this.lbBookingInfo = new System.Windows.Forms.Label();
+            this.panAddCust = new System.Windows.Forms.Panel();
+            this.lblAddCust = new System.Windows.Forms.Label();
+            this.panBookingCalendar = new System.Windows.Forms.Panel();
+            this.lblBookingCalendar = new System.Windows.Forms.Label();
+            this.panLogin = new System.Windows.Forms.Panel();
+            this.lblLogin = new System.Windows.Forms.Label();
+            this.panAddBooking = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panViewData = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.panClock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgRoomBookingsSummary)).BeginInit();
             this.mainMenu.SuspendLayout();
             this.panFloorLayout.SuspendLayout();
+            this.panAddCust.SuspendLayout();
+            this.panBookingCalendar.SuspendLayout();
+            this.panLogin.SuspendLayout();
+            this.panAddBooking.SuspendLayout();
+            this.panViewData.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbUserName
             // 
-            this.tbUserName.Location = new System.Drawing.Point(202, 141);
+            this.tbUserName.Location = new System.Drawing.Point(341, 130);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(100, 20);
             this.tbUserName.TabIndex = 0;
@@ -109,7 +124,7 @@
             // 
             // tbUserPass
             // 
-            this.tbUserPass.Location = new System.Drawing.Point(202, 176);
+            this.tbUserPass.Location = new System.Drawing.Point(341, 165);
             this.tbUserPass.Name = "tbUserPass";
             this.tbUserPass.Size = new System.Drawing.Size(100, 20);
             this.tbUserPass.TabIndex = 1;
@@ -118,7 +133,7 @@
             // lbUserName
             // 
             this.lbUserName.AutoSize = true;
-            this.lbUserName.Location = new System.Drawing.Point(133, 147);
+            this.lbUserName.Location = new System.Drawing.Point(272, 136);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(55, 13);
             this.lbUserName.TabIndex = 2;
@@ -127,7 +142,7 @@
             // lbUserPass
             // 
             this.lbUserPass.AutoSize = true;
-            this.lbUserPass.Location = new System.Drawing.Point(136, 182);
+            this.lbUserPass.Location = new System.Drawing.Point(275, 171);
             this.lbUserPass.Name = "lbUserPass";
             this.lbUserPass.Size = new System.Drawing.Size(53, 13);
             this.lbUserPass.TabIndex = 3;
@@ -137,7 +152,7 @@
             // 
             this.lbCueSys.AutoSize = true;
             this.lbCueSys.Font = new System.Drawing.Font("Consolas", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCueSys.Location = new System.Drawing.Point(230, 12);
+            this.lbCueSys.Location = new System.Drawing.Point(267, 24);
             this.lbCueSys.Name = "lbCueSys";
             this.lbCueSys.Size = new System.Drawing.Size(277, 75);
             this.lbCueSys.TabIndex = 4;
@@ -145,7 +160,7 @@
             // 
             // btLogin
             // 
-            this.btLogin.Location = new System.Drawing.Point(202, 269);
+            this.btLogin.Location = new System.Drawing.Point(355, 258);
             this.btLogin.Name = "btLogin";
             this.btLogin.Size = new System.Drawing.Size(75, 23);
             this.btLogin.TabIndex = 5;
@@ -202,7 +217,7 @@
             // dgRoomBookingsSummary
             // 
             this.dgRoomBookingsSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgRoomBookingsSummary.Location = new System.Drawing.Point(12, 95);
+            this.dgRoomBookingsSummary.Location = new System.Drawing.Point(12, 65);
             this.dgRoomBookingsSummary.Name = "dgRoomBookingsSummary";
             this.dgRoomBookingsSummary.Size = new System.Drawing.Size(776, 351);
             this.dgRoomBookingsSummary.TabIndex = 7;
@@ -263,14 +278,14 @@
             // createCustomerToolStripMenuItem
             // 
             this.createCustomerToolStripMenuItem.Name = "createCustomerToolStripMenuItem";
-            this.createCustomerToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.createCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.createCustomerToolStripMenuItem.Text = "Create Customer";
             this.createCustomerToolStripMenuItem.Click += new System.EventHandler(this.createCustomerToolStripMenuItem_Click);
             // 
             // viewCustomersToolStripMenuItem
             // 
             this.viewCustomersToolStripMenuItem.Name = "viewCustomersToolStripMenuItem";
-            this.viewCustomersToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.viewCustomersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewCustomersToolStripMenuItem.Text = "View Customers";
             this.viewCustomersToolStripMenuItem.Click += new System.EventHandler(this.viewCustomersToolStripMenuItem_Click);
             // 
@@ -280,13 +295,13 @@
             this.bookRoomToolStripMenuItem,
             this.viewBookingsToolStripMenuItem});
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
-            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
-            this.roomsToolStripMenuItem.Text = "Rooms";
+            this.roomsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.roomsToolStripMenuItem.Text = "Bookings";
             // 
             // bookRoomToolStripMenuItem
             // 
             this.bookRoomToolStripMenuItem.Name = "bookRoomToolStripMenuItem";
-            this.bookRoomToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bookRoomToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.bookRoomToolStripMenuItem.Text = "Book Flights";
             this.bookRoomToolStripMenuItem.Click += new System.EventHandler(this.bookRoomToolStripMenuItem_Click);
             // 
@@ -322,7 +337,7 @@
             this.panFloorLayout.Controls.Add(this.btRoomF);
             this.panFloorLayout.Controls.Add(this.btRoomD);
             this.panFloorLayout.Controls.Add(this.btRoomB);
-            this.panFloorLayout.Location = new System.Drawing.Point(86, 90);
+            this.panFloorLayout.Location = new System.Drawing.Point(128, 92);
             this.panFloorLayout.Name = "panFloorLayout";
             this.panFloorLayout.Size = new System.Drawing.Size(602, 312);
             this.panFloorLayout.TabIndex = 10;
@@ -427,7 +442,7 @@
             "Second",
             "Third",
             "Fourth"});
-            this.cbFloor.Location = new System.Drawing.Point(370, 90);
+            this.cbFloor.Location = new System.Drawing.Point(450, 54);
             this.cbFloor.Name = "cbFloor";
             this.cbFloor.Size = new System.Drawing.Size(121, 21);
             this.cbFloor.TabIndex = 11;
@@ -439,7 +454,7 @@
             "Armstrong Siddeley",
             "Jaguar",
             "William Lyons"});
-            this.cbBuilding.Location = new System.Drawing.Point(243, 90);
+            this.cbBuilding.Location = new System.Drawing.Point(298, 54);
             this.cbBuilding.Name = "cbBuilding";
             this.cbBuilding.Size = new System.Drawing.Size(121, 21);
             this.cbBuilding.TabIndex = 12;
@@ -447,7 +462,7 @@
             // lbCustContact
             // 
             this.lbCustContact.AutoSize = true;
-            this.lbCustContact.Location = new System.Drawing.Point(361, 154);
+            this.lbCustContact.Location = new System.Drawing.Point(300, 74);
             this.lbCustContact.Name = "lbCustContact";
             this.lbCustContact.Size = new System.Drawing.Size(91, 13);
             this.lbCustContact.TabIndex = 13;
@@ -455,14 +470,14 @@
             // 
             // tbCustContact
             // 
-            this.tbCustContact.Location = new System.Drawing.Point(458, 151);
+            this.tbCustContact.Location = new System.Drawing.Point(404, 71);
             this.tbCustContact.Name = "tbCustContact";
             this.tbCustContact.Size = new System.Drawing.Size(100, 20);
             this.tbCustContact.TabIndex = 14;
             // 
             // tbCustEmail
             // 
-            this.tbCustEmail.Location = new System.Drawing.Point(458, 176);
+            this.tbCustEmail.Location = new System.Drawing.Point(404, 96);
             this.tbCustEmail.Name = "tbCustEmail";
             this.tbCustEmail.Size = new System.Drawing.Size(100, 20);
             this.tbCustEmail.TabIndex = 16;
@@ -470,7 +485,7 @@
             // lbCustEmail
             // 
             this.lbCustEmail.AutoSize = true;
-            this.lbCustEmail.Location = new System.Drawing.Point(361, 179);
+            this.lbCustEmail.Location = new System.Drawing.Point(300, 99);
             this.lbCustEmail.Name = "lbCustEmail";
             this.lbCustEmail.Size = new System.Drawing.Size(72, 13);
             this.lbCustEmail.TabIndex = 15;
@@ -478,7 +493,7 @@
             // 
             // tbCustTel
             // 
-            this.tbCustTel.Location = new System.Drawing.Point(458, 202);
+            this.tbCustTel.Location = new System.Drawing.Point(404, 122);
             this.tbCustTel.Name = "tbCustTel";
             this.tbCustTel.Size = new System.Drawing.Size(100, 20);
             this.tbCustTel.TabIndex = 18;
@@ -486,7 +501,7 @@
             // lbCustTel
             // 
             this.lbCustTel.AutoSize = true;
-            this.lbCustTel.Location = new System.Drawing.Point(361, 205);
+            this.lbCustTel.Location = new System.Drawing.Point(300, 125);
             this.lbCustTel.Name = "lbCustTel";
             this.lbCustTel.Size = new System.Drawing.Size(98, 13);
             this.lbCustTel.TabIndex = 17;
@@ -494,7 +509,7 @@
             // 
             // tbCustTownCity
             // 
-            this.tbCustTownCity.Location = new System.Drawing.Point(458, 279);
+            this.tbCustTownCity.Location = new System.Drawing.Point(404, 199);
             this.tbCustTownCity.Name = "tbCustTownCity";
             this.tbCustTownCity.Size = new System.Drawing.Size(100, 20);
             this.tbCustTownCity.TabIndex = 24;
@@ -502,7 +517,7 @@
             // lbCustTownCity
             // 
             this.lbCustTownCity.AutoSize = true;
-            this.lbCustTownCity.Location = new System.Drawing.Point(361, 282);
+            this.lbCustTownCity.Location = new System.Drawing.Point(300, 202);
             this.lbCustTownCity.Name = "lbCustTownCity";
             this.lbCustTownCity.Size = new System.Drawing.Size(62, 13);
             this.lbCustTownCity.TabIndex = 23;
@@ -510,7 +525,7 @@
             // 
             // tbCustAdd2
             // 
-            this.tbCustAdd2.Location = new System.Drawing.Point(458, 253);
+            this.tbCustAdd2.Location = new System.Drawing.Point(404, 173);
             this.tbCustAdd2.Name = "tbCustAdd2";
             this.tbCustAdd2.Size = new System.Drawing.Size(100, 20);
             this.tbCustAdd2.TabIndex = 22;
@@ -518,7 +533,7 @@
             // lbCustAdd2
             // 
             this.lbCustAdd2.AutoSize = true;
-            this.lbCustAdd2.Location = new System.Drawing.Point(361, 256);
+            this.lbCustAdd2.Location = new System.Drawing.Point(300, 176);
             this.lbCustAdd2.Name = "lbCustAdd2";
             this.lbCustAdd2.Size = new System.Drawing.Size(77, 13);
             this.lbCustAdd2.TabIndex = 21;
@@ -526,7 +541,7 @@
             // 
             // tbCustAdd1
             // 
-            this.tbCustAdd1.Location = new System.Drawing.Point(458, 228);
+            this.tbCustAdd1.Location = new System.Drawing.Point(404, 148);
             this.tbCustAdd1.Name = "tbCustAdd1";
             this.tbCustAdd1.Size = new System.Drawing.Size(100, 20);
             this.tbCustAdd1.TabIndex = 20;
@@ -534,7 +549,7 @@
             // lbCustAdd1
             // 
             this.lbCustAdd1.AutoSize = true;
-            this.lbCustAdd1.Location = new System.Drawing.Point(361, 231);
+            this.lbCustAdd1.Location = new System.Drawing.Point(300, 151);
             this.lbCustAdd1.Name = "lbCustAdd1";
             this.lbCustAdd1.Size = new System.Drawing.Size(77, 13);
             this.lbCustAdd1.TabIndex = 19;
@@ -542,7 +557,7 @@
             // 
             // tbCustPostcode
             // 
-            this.tbCustPostcode.Location = new System.Drawing.Point(458, 305);
+            this.tbCustPostcode.Location = new System.Drawing.Point(404, 225);
             this.tbCustPostcode.Name = "tbCustPostcode";
             this.tbCustPostcode.Size = new System.Drawing.Size(100, 20);
             this.tbCustPostcode.TabIndex = 26;
@@ -550,7 +565,7 @@
             // lbCustPostcode
             // 
             this.lbCustPostcode.AutoSize = true;
-            this.lbCustPostcode.Location = new System.Drawing.Point(361, 308);
+            this.lbCustPostcode.Location = new System.Drawing.Point(300, 228);
             this.lbCustPostcode.Name = "lbCustPostcode";
             this.lbCustPostcode.Size = new System.Drawing.Size(52, 13);
             this.lbCustPostcode.TabIndex = 25;
@@ -560,14 +575,14 @@
             // 
             this.lbCustTitle.AutoSize = true;
             this.lbCustTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCustTitle.Location = new System.Drawing.Point(408, 125);
+            this.lbCustTitle.Location = new System.Drawing.Point(295, 43);
             this.lbCustTitle.Name = "lbCustTitle";
             this.lbCustTitle.Size = new System.Drawing.Size(0, 20);
             this.lbCustTitle.TabIndex = 27;
             // 
             // btCustSave
             // 
-            this.btCustSave.Location = new System.Drawing.Point(458, 332);
+            this.btCustSave.Location = new System.Drawing.Point(404, 253);
             this.btCustSave.Name = "btCustSave";
             this.btCustSave.Size = new System.Drawing.Size(100, 23);
             this.btCustSave.TabIndex = 28;
@@ -577,7 +592,7 @@
             // 
             // btCustUpdate
             // 
-            this.btCustUpdate.Location = new System.Drawing.Point(457, 333);
+            this.btCustUpdate.Location = new System.Drawing.Point(298, 282);
             this.btCustUpdate.Name = "btCustUpdate";
             this.btCustUpdate.Size = new System.Drawing.Size(100, 23);
             this.btCustUpdate.TabIndex = 29;
@@ -586,7 +601,7 @@
             // 
             // btCustDelete
             // 
-            this.btCustDelete.Location = new System.Drawing.Point(457, 362);
+            this.btCustDelete.Location = new System.Drawing.Point(404, 282);
             this.btCustDelete.Name = "btCustDelete";
             this.btCustDelete.Size = new System.Drawing.Size(100, 23);
             this.btCustDelete.TabIndex = 30;
@@ -595,7 +610,7 @@
             // 
             // btBook
             // 
-            this.btBook.Location = new System.Drawing.Point(517, 413);
+            this.btBook.Location = new System.Drawing.Point(501, 354);
             this.btBook.Name = "btBook";
             this.btBook.Size = new System.Drawing.Size(75, 23);
             this.btBook.TabIndex = 43;
@@ -605,7 +620,7 @@
             // 
             // tbTime
             // 
-            this.tbTime.Location = new System.Drawing.Point(365, 342);
+            this.tbTime.Location = new System.Drawing.Point(349, 283);
             this.tbTime.Mask = "00:00";
             this.tbTime.Name = "tbTime";
             this.tbTime.Size = new System.Drawing.Size(40, 20);
@@ -616,7 +631,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(255, 370);
+            this.label5.Location = new System.Drawing.Point(239, 311);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 25);
             this.label5.TabIndex = 41;
@@ -626,7 +641,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(255, 170);
+            this.label4.Location = new System.Drawing.Point(239, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 25);
             this.label4.TabIndex = 40;
@@ -636,7 +651,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(255, 336);
+            this.label3.Location = new System.Drawing.Point(239, 277);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 25);
             this.label3.TabIndex = 39;
@@ -646,7 +661,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(255, 413);
+            this.label2.Location = new System.Drawing.Point(239, 354);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 25);
             this.label2.TabIndex = 38;
@@ -656,7 +671,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(255, 134);
+            this.label1.Location = new System.Drawing.Point(239, 75);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(104, 25);
             this.label1.TabIndex = 37;
@@ -665,14 +680,14 @@
             // mcDate
             // 
             this.mcDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 3.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mcDate.Location = new System.Drawing.Point(365, 170);
+            this.mcDate.Location = new System.Drawing.Point(349, 111);
             this.mcDate.Name = "mcDate";
             this.mcDate.TabIndex = 36;
             // 
             // cbPaid
             // 
             this.cbPaid.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPaid.Location = new System.Drawing.Point(372, 413);
+            this.cbPaid.Location = new System.Drawing.Point(356, 354);
             this.cbPaid.Name = "cbPaid";
             this.cbPaid.Size = new System.Drawing.Size(25, 25);
             this.cbPaid.TabIndex = 35;
@@ -681,7 +696,7 @@
             // tbCustomer
             // 
             this.tbCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCustomer.Location = new System.Drawing.Point(365, 130);
+            this.tbCustomer.Location = new System.Drawing.Point(349, 71);
             this.tbCustomer.Name = "tbCustomer";
             this.tbCustomer.Size = new System.Drawing.Size(227, 29);
             this.tbCustomer.TabIndex = 34;
@@ -689,7 +704,7 @@
             // tbCost
             // 
             this.tbCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCost.Location = new System.Drawing.Point(365, 368);
+            this.tbCost.Location = new System.Drawing.Point(349, 309);
             this.tbCost.Name = "tbCost";
             this.tbCost.Size = new System.Drawing.Size(227, 29);
             this.tbCost.TabIndex = 33;
@@ -698,62 +713,158 @@
             // 
             this.lbBookingInfo.AutoSize = true;
             this.lbBookingInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBookingInfo.Location = new System.Drawing.Point(368, 96);
+            this.lbBookingInfo.Location = new System.Drawing.Point(352, 37);
             this.lbBookingInfo.Name = "lbBookingInfo";
             this.lbBookingInfo.Size = new System.Drawing.Size(133, 25);
             this.lbBookingInfo.TabIndex = 32;
             this.lbBookingInfo.Text = "xxxxxxxxxxx";
+            // 
+            // panAddCust
+            // 
+            this.panAddCust.Controls.Add(this.lblAddCust);
+            this.panAddCust.Controls.Add(this.lbCustContact);
+            this.panAddCust.Controls.Add(this.tbCustContact);
+            this.panAddCust.Controls.Add(this.btCustDelete);
+            this.panAddCust.Controls.Add(this.lbCustEmail);
+            this.panAddCust.Controls.Add(this.tbCustEmail);
+            this.panAddCust.Controls.Add(this.btCustSave);
+            this.panAddCust.Controls.Add(this.lbCustTel);
+            this.panAddCust.Controls.Add(this.lbCustTitle);
+            this.panAddCust.Controls.Add(this.tbCustTel);
+            this.panAddCust.Controls.Add(this.tbCustPostcode);
+            this.panAddCust.Controls.Add(this.lbCustAdd1);
+            this.panAddCust.Controls.Add(this.lbCustPostcode);
+            this.panAddCust.Controls.Add(this.tbCustAdd1);
+            this.panAddCust.Controls.Add(this.tbCustTownCity);
+            this.panAddCust.Controls.Add(this.lbCustAdd2);
+            this.panAddCust.Controls.Add(this.lbCustTownCity);
+            this.panAddCust.Controls.Add(this.tbCustAdd2);
+            this.panAddCust.Controls.Add(this.btCustUpdate);
+            this.panAddCust.Location = new System.Drawing.Point(12, 393);
+            this.panAddCust.Name = "panAddCust";
+            this.panAddCust.Size = new System.Drawing.Size(110, 45);
+            this.panAddCust.TabIndex = 44;
+            // 
+            // lblAddCust
+            // 
+            this.lblAddCust.AutoSize = true;
+            this.lblAddCust.Location = new System.Drawing.Point(12, 8);
+            this.lblAddCust.Name = "lblAddCust";
+            this.lblAddCust.Size = new System.Drawing.Size(65, 13);
+            this.lblAddCust.TabIndex = 45;
+            this.lblAddCust.Text = "panAddCust";
+            this.lblAddCust.Visible = false;
+            // 
+            // panBookingCalendar
+            // 
+            this.panBookingCalendar.Controls.Add(this.lblBookingCalendar);
+            this.panBookingCalendar.Controls.Add(this.lbBookingInfo);
+            this.panBookingCalendar.Controls.Add(this.tbCost);
+            this.panBookingCalendar.Controls.Add(this.btBook);
+            this.panBookingCalendar.Controls.Add(this.tbCustomer);
+            this.panBookingCalendar.Controls.Add(this.tbTime);
+            this.panBookingCalendar.Controls.Add(this.cbPaid);
+            this.panBookingCalendar.Controls.Add(this.label5);
+            this.panBookingCalendar.Controls.Add(this.mcDate);
+            this.panBookingCalendar.Controls.Add(this.label4);
+            this.panBookingCalendar.Controls.Add(this.label1);
+            this.panBookingCalendar.Controls.Add(this.label3);
+            this.panBookingCalendar.Controls.Add(this.label2);
+            this.panBookingCalendar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panBookingCalendar.Location = new System.Drawing.Point(0, 24);
+            this.panBookingCalendar.Name = "panBookingCalendar";
+            this.panBookingCalendar.Size = new System.Drawing.Size(800, 426);
+            this.panBookingCalendar.TabIndex = 45;
+            // 
+            // lblBookingCalendar
+            // 
+            this.lblBookingCalendar.AutoSize = true;
+            this.lblBookingCalendar.Location = new System.Drawing.Point(3, 6);
+            this.lblBookingCalendar.Name = "lblBookingCalendar";
+            this.lblBookingCalendar.Size = new System.Drawing.Size(106, 13);
+            this.lblBookingCalendar.TabIndex = 44;
+            this.lblBookingCalendar.Text = "panBookingCalendar";
+            this.lblBookingCalendar.Visible = false;
+            // 
+            // panLogin
+            // 
+            this.panLogin.Controls.Add(this.lblLogin);
+            this.panLogin.Controls.Add(this.lbUserName);
+            this.panLogin.Controls.Add(this.tbUserName);
+            this.panLogin.Controls.Add(this.tbUserPass);
+            this.panLogin.Controls.Add(this.lbUserPass);
+            this.panLogin.Controls.Add(this.btLogin);
+            this.panLogin.Location = new System.Drawing.Point(346, 392);
+            this.panLogin.Name = "panLogin";
+            this.panLogin.Size = new System.Drawing.Size(110, 46);
+            this.panLogin.TabIndex = 46;
+            // 
+            // lblLogin
+            // 
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Location = new System.Drawing.Point(22, 12);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(51, 13);
+            this.lblLogin.TabIndex = 46;
+            this.lblLogin.Text = "panLogin";
+            this.lblLogin.Visible = false;
+            // 
+            // panAddBooking
+            // 
+            this.panAddBooking.Controls.Add(this.label6);
+            this.panAddBooking.Controls.Add(this.cbBuilding);
+            this.panAddBooking.Controls.Add(this.panFloorLayout);
+            this.panAddBooking.Controls.Add(this.cbFloor);
+            this.panAddBooking.Location = new System.Drawing.Point(513, 393);
+            this.panAddBooking.Name = "panAddBooking";
+            this.panAddBooking.Size = new System.Drawing.Size(110, 45);
+            this.panAddBooking.TabIndex = 47;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 4);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 13);
+            this.label6.TabIndex = 47;
+            this.label6.Text = "panAddBooking";
+            this.label6.Visible = false;
+            // 
+            // panViewData
+            // 
+            this.panViewData.Controls.Add(this.label7);
+            this.panViewData.Controls.Add(this.dgRoomBookingsSummary);
+            this.panViewData.Location = new System.Drawing.Point(179, 392);
+            this.panViewData.Name = "panViewData";
+            this.panViewData.Size = new System.Drawing.Size(110, 46);
+            this.panViewData.TabIndex = 48;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 5);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 13);
+            this.label7.TabIndex = 46;
+            this.label7.Text = "panViewData";
+            this.label7.Visible = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btBook);
-            this.Controls.Add(this.tbTime);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.mcDate);
-            this.Controls.Add(this.cbPaid);
-            this.Controls.Add(this.tbCustomer);
-            this.Controls.Add(this.tbCost);
-            this.Controls.Add(this.lbBookingInfo);
-            this.Controls.Add(this.btCustDelete);
-            this.Controls.Add(this.btCustUpdate);
-            this.Controls.Add(this.btCustSave);
-            this.Controls.Add(this.lbCustTitle);
-            this.Controls.Add(this.tbCustPostcode);
-            this.Controls.Add(this.lbCustPostcode);
-            this.Controls.Add(this.tbCustTownCity);
-            this.Controls.Add(this.lbCustTownCity);
-            this.Controls.Add(this.tbCustAdd2);
-            this.Controls.Add(this.lbCustAdd2);
-            this.Controls.Add(this.tbCustAdd1);
-            this.Controls.Add(this.lbCustAdd1);
-            this.Controls.Add(this.tbCustTel);
-            this.Controls.Add(this.lbCustTel);
-            this.Controls.Add(this.tbCustEmail);
-            this.Controls.Add(this.lbCustEmail);
-            this.Controls.Add(this.tbCustContact);
-            this.Controls.Add(this.lbCustContact);
-            this.Controls.Add(this.cbBuilding);
-            this.Controls.Add(this.cbFloor);
-            this.Controls.Add(this.panFloorLayout);
-            this.Controls.Add(this.dgRoomBookingsSummary);
+            this.Controls.Add(this.panViewData);
+            this.Controls.Add(this.panAddBooking);
+            this.Controls.Add(this.panBookingCalendar);
+            this.Controls.Add(this.panAddCust);
             this.Controls.Add(this.panClock);
-            this.Controls.Add(this.btLogin);
             this.Controls.Add(this.lbCueSys);
-            this.Controls.Add(this.lbUserPass);
-            this.Controls.Add(this.lbUserName);
-            this.Controls.Add(this.tbUserPass);
-            this.Controls.Add(this.tbUserName);
             this.Controls.Add(this.mainMenu);
+            this.Controls.Add(this.panLogin);
             this.MainMenuStrip = this.mainMenu;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Azmansys v1.0 - BT Airlines";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panClock.ResumeLayout(false);
             this.panClock.PerformLayout();
@@ -761,6 +872,16 @@
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
             this.panFloorLayout.ResumeLayout(false);
+            this.panAddCust.ResumeLayout(false);
+            this.panAddCust.PerformLayout();
+            this.panBookingCalendar.ResumeLayout(false);
+            this.panBookingCalendar.PerformLayout();
+            this.panLogin.ResumeLayout(false);
+            this.panLogin.PerformLayout();
+            this.panAddBooking.ResumeLayout(false);
+            this.panAddBooking.PerformLayout();
+            this.panViewData.ResumeLayout(false);
+            this.panViewData.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -832,6 +953,16 @@
         private System.Windows.Forms.TextBox tbCustomer;
         private System.Windows.Forms.TextBox tbCost;
         private System.Windows.Forms.Label lbBookingInfo;
+        private System.Windows.Forms.Panel panAddCust;
+        private System.Windows.Forms.Panel panBookingCalendar;
+        private System.Windows.Forms.Label lblBookingCalendar;
+        private System.Windows.Forms.Label lblAddCust;
+        private System.Windows.Forms.Panel panLogin;
+        private System.Windows.Forms.Label lblLogin;
+        private System.Windows.Forms.Panel panAddBooking;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel panViewData;
+        private System.Windows.Forms.Label label7;
     }
 }
 

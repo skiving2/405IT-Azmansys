@@ -58,17 +58,18 @@ namespace CUESYSv._01
             switch (newFocus)//Use control statement to selectively show controls based on newFocus argument
             {
                 case "Program started":
-                    lbUserName.Visible = lbUserPass.Visible = tbUserName.Visible = tbUserPass.Visible = btLogin.Visible = true;//make login controls visible
+                    lbUserName.Visible = lbUserPass.Visible = tbUserName.Visible = tbUserPass.Visible = btLogin.Visible = panLogin.Visible = true;//make login controls visible
+                    panLogin.Dock = DockStyle.Fill; // Docks panel to display login controls
                     devLogs("Login controls visible");
                     break;
                 case "landing":
-                    dgRoomBookingsSummary.Visible = true;
+                    dgRoomBookingsSummary.Visible = panViewData.Visible = true; //makes bookings table controls visible
+                    panViewData.Dock = DockStyle.Fill; ////Docks panel containing DataGridView for bookings table
                     dbReturn("SELECT * FROM `tblBookings` WHERE `bookingDateTime` >= CURDATE()");
                     break;
                 case "Book Room":
-                    panFloorLayout.Visible = true;
-                    cbBuilding.Visible = true;
-                    cbFloor.Visible = true;
+                    panFloorLayout.Visible = cbBuilding.Visible = cbFloor.Visible = panAddBooking.Visible = true; //Makes bookings controls visible
+                    panAddBooking.Dock = DockStyle.Fill; //Docks add bookings panel to display all controls
                     foreach (var x in panFloorLayout.Controls.OfType<Button>())
                     {//Make each button transparent
                         x.Parent = panFloorLayout;
@@ -100,10 +101,13 @@ namespace CUESYSv._01
                     tbCustTownCity.Visible = true;
                     btCustSave.Visible = true;
                     lbCustTitle.Text = "Create Customer";
+                    panAddCust.Visible = true;
+                    panAddCust.Dock = DockStyle.Fill; //Docks create customer panel
                     break;
                 case "view customers":
                     //show all customers
-                    dgRoomBookingsSummary.Visible = true;
+                    dgRoomBookingsSummary.Visible = panViewData.Visible = true;
+                    panViewData.Dock = DockStyle.Fill; //Docks panel containing DataGridView for customers Table
                     dbReturn("SELECT * FROM `tblCustomer`");
                     break;
                 case "Exit":
@@ -146,6 +150,8 @@ namespace CUESYSv._01
                 default:
                     break;
             }
+            panBookingCalendar.Visible = true; //sets room booking panel to become visible
+            panBookingCalendar.Dock = DockStyle.Fill;
             lbBookingInfo.Visible = true;
             label1.Visible = true;
             label2.Visible = true;
