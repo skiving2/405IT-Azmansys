@@ -1,18 +1,8 @@
-06/07/2020 14:40:15 --- resetControls triggered
-06/07/2020 14:40:15 --- Login controls visible
-06/07/2020 14:40:15 --- Focus changed to Program started
-06/07/2020 14:40:15 --- Program started
-06/07/2020 14:40:18 --- resetControls triggered
-06/07/2020 14:40:18 --- Focus changed to Book Room
-06/07/2020 14:40:18 --- book room request
-06/07/2020 14:40:19 --- resetControls triggered
-06/07/2020 14:40:19 --- resetControls default case triggered, no controls visible
-06/07/2020 14:40:19 --- Focus changed to 
-06/07/2020 14:40:19 --- room d clicked
-06/07/2020 14:40:23 --- resetControls triggered
-06/07/2020 14:40:23 --- Focus changed to Book Room
-06/07/2020 14:40:23 --- book room request
-06/07/2020 14:40:26 --- resetControls triggered
-06/07/2020 14:40:26 --- resetControls default case triggered, no controls visible
-06/07/2020 14:40:26 --- Focus changed to 
-06/07/2020 14:40:26 --- room d clicked
+10/07/2020 00:34:34 --- resetControls triggered
+10/07/2020 00:34:34 --- Login controls visible
+10/07/2020 00:34:34 --- Focus changed to Program started
+10/07/2020 00:34:34 --- Program started
+10/07/2020 00:35:12 --- resetControls triggered
+10/07/2020 00:35:12 --- SELECT * FROM `tblflights` sql run
+10/07/2020 00:35:12 --- Focus changed to view flights
+10/07/2020 00:35:12 --- show flights

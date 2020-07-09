@@ -116,5 +116,22 @@ namespace CUESYSv._01
             comm.ExecuteNonQuery();
             connClose();
         }
+
+        public void insertFlight(string flightOrigin, string flightDestination, int seatCapacity, int seatsOccupied, string flightDeparture, string flightDuration, string priceAdult, string priceChild, string priceInfant)
+        {
+            MySqlCommand comm = conn.CreateCommand();
+            comm.CommandText = "INSERT INTO `tblflights` (`flightOrigin`, `flightDestination`, `seatCapacity`, `seatsOccupied`, `flightDeparture`, `flightDuration`, `priceAdult`, `priceChild`, `priceInfant`) VALUES (@flightOrigin, @flightDestination, @seatCapacity, @seatsOccupied, @flightDeparture, @flightDuration, @priceAdult, @priceChild, @priceInfant);";
+            comm.Parameters.AddWithValue("@flightOrigin", flightOrigin);
+            comm.Parameters.AddWithValue("@flightDestination", flightDestination);
+            comm.Parameters.AddWithValue("@seatCapacity", seatCapacity);
+            comm.Parameters.AddWithValue("@seatsOccupied", seatsOccupied);
+            comm.Parameters.AddWithValue("@flightDeparture", flightDeparture);
+            comm.Parameters.AddWithValue("@flightDuration", flightDuration);
+            comm.Parameters.AddWithValue("@priceAdult", priceAdult);
+            comm.Parameters.AddWithValue("@priceChild", priceChild);
+            comm.Parameters.AddWithValue("@priceInfant", priceInfant);
+            comm.ExecuteNonQuery();
+            connClose();
+        }
     }
 }

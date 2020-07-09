@@ -110,6 +110,13 @@ namespace CUESYSv._01
                     panViewData.Dock = DockStyle.Fill; //Docks panel containing DataGridView for customers Table
                     dbReturn("SELECT * FROM `tblCustomer`");
                     break;
+                case "view flights":
+                    //show all customers
+                    dgRoomBookingsSummary.Visible = panViewData.Visible = true;
+                    panViewData.Dock = DockStyle.Fill; //Docks panel containing DataGridView for customers Table
+                    dbReturn("SELECT * FROM `tblflights`");
+                    break;
+
                 case "Exit":
                     Application.Exit();
                     break;
@@ -403,6 +410,19 @@ namespace CUESYSv._01
             }
             resetControls("landing");
         }
+
+        private void addFlightToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            newFlight flightForm = new newFlight();
+            flightForm.ShowDialog(); //Shows add flight form while preventing interaction with main form until it is closed.
+        }
+
+        private void viewFlightsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            resetControls("view flights"); devLogs("show flights");
+        }
+
+
         ///// EVENTS END ///////////////////////////////////////////////////////////
     }
 }

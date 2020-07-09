@@ -52,6 +52,7 @@
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookRoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewBookingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.btRoomB = new System.Windows.Forms.Button();
             this.panFloorLayout = new System.Windows.Forms.Panel();
             this.btRoomG = new System.Windows.Forms.Button();
@@ -103,6 +104,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panViewData = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.flightsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addFlightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewFlightsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panClock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgRoomBookingsSummary)).BeginInit();
             this.mainMenu.SuspendLayout();
@@ -229,7 +233,9 @@
             this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.customerToolStripMenuItem,
-            this.roomsToolStripMenuItem});
+            this.flightsToolStripMenuItem,
+            this.roomsToolStripMenuItem,
+            this.toolStripMenuItem1});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Size = new System.Drawing.Size(800, 24);
@@ -301,16 +307,21 @@
             // bookRoomToolStripMenuItem
             // 
             this.bookRoomToolStripMenuItem.Name = "bookRoomToolStripMenuItem";
-            this.bookRoomToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.bookRoomToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bookRoomToolStripMenuItem.Text = "Book Flights";
             this.bookRoomToolStripMenuItem.Click += new System.EventHandler(this.bookRoomToolStripMenuItem_Click);
             // 
             // viewBookingsToolStripMenuItem
             // 
             this.viewBookingsToolStripMenuItem.Name = "viewBookingsToolStripMenuItem";
-            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewBookingsToolStripMenuItem.Text = "View Bookings";
             this.viewBookingsToolStripMenuItem.Click += new System.EventHandler(this.viewBookingsToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
             // 
             // btRoomB
             // 
@@ -575,7 +586,7 @@
             // 
             this.lbCustTitle.AutoSize = true;
             this.lbCustTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCustTitle.Location = new System.Drawing.Point(295, 43);
+            this.lbCustTitle.Location = new System.Drawing.Point(335, 43);
             this.lbCustTitle.Name = "lbCustTitle";
             this.lbCustTitle.Size = new System.Drawing.Size(0, 20);
             this.lbCustTitle.TabIndex = 27;
@@ -770,10 +781,9 @@
             this.panBookingCalendar.Controls.Add(this.label1);
             this.panBookingCalendar.Controls.Add(this.label3);
             this.panBookingCalendar.Controls.Add(this.label2);
-            this.panBookingCalendar.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panBookingCalendar.Location = new System.Drawing.Point(0, 24);
+            this.panBookingCalendar.Location = new System.Drawing.Point(667, 392);
             this.panBookingCalendar.Name = "panBookingCalendar";
-            this.panBookingCalendar.Size = new System.Drawing.Size(800, 426);
+            this.panBookingCalendar.Size = new System.Drawing.Size(121, 46);
             this.panBookingCalendar.TabIndex = 45;
             // 
             // lblBookingCalendar
@@ -802,7 +812,7 @@
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(22, 12);
+            this.lblLogin.Location = new System.Drawing.Point(3, 5);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(51, 13);
             this.lblLogin.TabIndex = 46;
@@ -849,16 +859,39 @@
             this.label7.Text = "panViewData";
             this.label7.Visible = false;
             // 
+            // flightsToolStripMenuItem
+            // 
+            this.flightsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addFlightToolStripMenuItem,
+            this.viewFlightsToolStripMenuItem});
+            this.flightsToolStripMenuItem.Name = "flightsToolStripMenuItem";
+            this.flightsToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.flightsToolStripMenuItem.Text = "Flights";
+            // 
+            // addFlightToolStripMenuItem
+            // 
+            this.addFlightToolStripMenuItem.Name = "addFlightToolStripMenuItem";
+            this.addFlightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addFlightToolStripMenuItem.Text = "Add Flight";
+            this.addFlightToolStripMenuItem.Click += new System.EventHandler(this.addFlightToolStripMenuItem_Click);
+            // 
+            // viewFlightsToolStripMenuItem
+            // 
+            this.viewFlightsToolStripMenuItem.Name = "viewFlightsToolStripMenuItem";
+            this.viewFlightsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewFlightsToolStripMenuItem.Text = "View Flights";
+            this.viewFlightsToolStripMenuItem.Click += new System.EventHandler(this.viewFlightsToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panClock);
             this.Controls.Add(this.panViewData);
             this.Controls.Add(this.panAddBooking);
             this.Controls.Add(this.panBookingCalendar);
             this.Controls.Add(this.panAddCust);
-            this.Controls.Add(this.panClock);
             this.Controls.Add(this.lbCueSys);
             this.Controls.Add(this.mainMenu);
             this.Controls.Add(this.panLogin);
@@ -963,6 +996,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panViewData;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem flightsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addFlightToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewFlightsToolStripMenuItem;
     }
 }
 
