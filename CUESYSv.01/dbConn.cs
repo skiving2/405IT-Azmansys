@@ -70,10 +70,10 @@ namespace CUESYSv._01
             connClose();
             return ds;
         }
-        public void insertCustomer(string custContact, string custEmail, string custTel, string custAddr1, string custAddr2, string custTownCity, string custPostcode)
+        public void insertCustomer(string custContact, string custEmail, string custTel, string custAddr1, string custAddr2, string custTownCity, string custPostcode, string custNationality)
         {
             MySqlCommand comm = conn.CreateCommand();
-            comm.CommandText = "INSERT INTO `tblCustomer` (`custContact`, `custEmail`, `custTel`, `custAddr1`, `custAddr2`, `custTownCity`, `custPostcode`) VALUES (@custContact, @custEmail, @custTel, @custAddr1, @custAddr2, @custTownCity, @custPostcode);";
+            comm.CommandText = "INSERT INTO `tblCustomer` (`custContact`, `custEmail`, `custTel`, `custAddr1`, `custAddr2`, `custTownCity`, `custPostcode`, `custNationality`) VALUES (@custContact, @custEmail, @custTel, @custAddr1, @custAddr2, @custTownCity, @custPostcode, @custNationality);";
             comm.Parameters.AddWithValue("@custContact", custContact);
             comm.Parameters.AddWithValue("@custEmail", custEmail);
             comm.Parameters.AddWithValue("@custTel", custTel);
@@ -81,6 +81,7 @@ namespace CUESYSv._01
             comm.Parameters.AddWithValue("@custAddr2", custAddr2);
             comm.Parameters.AddWithValue("@custTownCity", custTownCity);
             comm.Parameters.AddWithValue("@custPostcode", custPostcode);
+            comm.Parameters.AddWithValue("@custNationality", custNationality);
             comm.ExecuteNonQuery();
             connClose();
         }
@@ -102,7 +103,7 @@ namespace CUESYSv._01
         {
             connOpen();
             MySqlCommand comm = conn.CreateCommand();
-            comm.CommandText = "DELETE FROM `tblBookings` WHERE `tblBookings`.`bookingID` = @id";
+            comm.CommandText = "DELETE FROM `tblbookings` WHERE `tblbookings`.`id` = @id";
             comm.Parameters.AddWithValue("@id", id);
             comm.ExecuteNonQuery();
             connClose();
@@ -111,11 +112,23 @@ namespace CUESYSv._01
         {
             connOpen();
             MySqlCommand comm = conn.CreateCommand();
-            comm.CommandText = "DELETE FROM `tblCustomer` WHERE `tblCustomer`.`custID` = @id";
+            comm.CommandText = "DELETE FROM `tblCustomer` WHERE `tblCustomer`.`id` = @id";
             comm.Parameters.AddWithValue("@id", id);
             comm.ExecuteNonQuery();
             connClose();
         }
+
+        public void deleteFlight(string id)
+        {
+            connOpen();
+            MySqlCommand comm = conn.CreateCommand();
+            comm.CommandText = "DELETE FROM `tblflights` WHERE `tblflights`.`id` = @id";
+            comm.Parameters.AddWithValue("@id", id);
+            comm.ExecuteNonQuery();
+            connClose();
+        }
+
+
 
         public void insertFlight(string flightOrigin, string flightDestination, int seatCapacity, int seatsOccupied, string flightDeparture, string flightDuration, string priceAdult, string priceChild, string priceInfant)
         {
@@ -130,6 +143,23 @@ namespace CUESYSv._01
             comm.Parameters.AddWithValue("@priceAdult", priceAdult);
             comm.Parameters.AddWithValue("@priceChild", priceChild);
             comm.Parameters.AddWithValue("@priceInfant", priceInfant);
+            comm.ExecuteNonQuery();
+            connClose();
+        }
+
+        public void updateBooking(string id, string custContact, string flightOrigin, string flightDestination, string flightSeatNumber, string bookingDateTime, string bookingCost, string bookingPaid)
+        {
+            connOpen();
+            MySqlCommand comm = conn.CreateCommand();
+            comm.CommandText = "UPDATE `tblBookings` SET custContact =@custContact, flightOrigin =@flightOrigin, flightDestination =@flightDestination, flightSeatNumber =@flightSeatNumber, bookingDateTime =@bookingDateTime, bookingCost =@bookingCost, bookingPaid =@bookingPaid WHERE `tblbookings` .`id` = @id";
+            comm.Parameters.AddWithValue("@id", id);
+            comm.Parameters.AddWithValue("@custContact", custContact);
+            comm.Parameters.AddWithValue("@flightOrigin", flightOrigin);
+            comm.Parameters.AddWithValue("@flightDestination", flightDestination);
+            comm.Parameters.AddWithValue("@flightSeatNumber", flightSeatNumber);
+            comm.Parameters.AddWithValue("@bookingDateTime", bookingDateTime);
+            comm.Parameters.AddWithValue("@bookingCost", bookingCost);
+            comm.Parameters.AddWithValue("@bookingPaid", bookingPaid);
             comm.ExecuteNonQuery();
             connClose();
         }

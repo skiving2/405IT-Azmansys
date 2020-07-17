@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using System.IO;
+using MySqlX.XDevAPI.Relational;
 
 namespace CUESYSv._01
 {
@@ -26,6 +27,17 @@ namespace CUESYSv._01
         dbConn mysqlConn = new dbConn();
         private string varFloor;
         private string varRoom;
+        private string whichTable;
+
+        public static string flightId;
+        public static string flightOrigin;
+        public static string flightDestination;
+
+        //update index variables
+        public static bool updateMode;
+        public static string bookingIndex;
+        public static string customerIndex;
+        public static string flightDataIndex;
         ///// VARIABLES END ////////////////////////////////////////////////////////
 
         ///// METHODS START ////////////////////////////////////////////////////////
@@ -47,6 +59,10 @@ namespace CUESYSv._01
             catch { return false; }
         }
 
+
+
+
+
         public void resetControls(string newFocus)
         {//Hide all controls and only show those needed
             devLogs("resetControls triggered");
@@ -62,26 +78,32 @@ namespace CUESYSv._01
                     panLogin.Dock = DockStyle.Fill; // Docks panel to display login controls
                     devLogs("Login controls visible");
                     break;
+                case "login":
+                    lbWelcome.Visible = true;
+                    break;
                 case "landing":
                     dgRoomBookingsSummary.Visible = panViewData.Visible = true; //makes bookings table controls visible
                     panViewData.Dock = DockStyle.Fill; ////Docks panel containing DataGridView for bookings table
                     dbReturn("SELECT * FROM `tblBookings` WHERE `bookingDateTime` >= CURDATE()");
                     break;
                 case "Book Room":
-                    panFloorLayout.Visible = cbBuilding.Visible = cbFloor.Visible = panAddBooking.Visible = true; //Makes bookings controls visible
-                    panAddBooking.Dock = DockStyle.Fill; //Docks add bookings panel to display all controls
-                    foreach (var x in panFloorLayout.Controls.OfType<Button>())
-                    {//Make each button transparent
-                        x.Parent = panFloorLayout;
-                        x.Visible = true;
-                        x.BackColor = Color.Transparent;
-                        x.FlatAppearance.MouseDownBackColor = Color.Transparent;
-                        x.FlatAppearance.MouseOverBackColor = Color.Transparent;
-                        x.FlatStyle = FlatStyle.Flat;
-                        x.ForeColor = BackColor;
-                        x.UseVisualStyleBackColor = true;
-                        x.FlatAppearance.BorderSize = 0;
-                    };
+                    panAddBooking.Visible = true;
+                    cbBuilding.Visible = true;
+                    btBookingCont.Enabled = false; //locks control until other controls have been selected
+                    cbFloor.Enabled = false; //locks combobox until destination has been selected
+
+                    dgRoomBookingsSummary.DataSource = mysqlConn.qry("SELECT * FROM `tblflights` WHERE id <> 'NULL'").Tables[0]; //load flights data grid to find list of flights to load into combobox
+
+                    foreach (DataGridViewRow flightRow in dgRoomBookingsSummary.Rows) //loop through each row, if the value is not null then the flight destination values are added to the flights combobox
+                    {
+                        if (flightRow.Cells[2].Value != null)
+                        {
+
+                            cbBuilding.Items.Add(flightRow.Cells[2].Value.ToString());
+                            //cbFloor.Items.Add(flightRow.Cells[1].Value.ToString());
+                        }
+
+                    }
                     break;
                 case "create customer":
                     lbCustAdd1.Visible = true;
@@ -191,7 +213,7 @@ namespace CUESYSv._01
         private void Form1_Load(object sender, EventArgs e)
         {
             File.WriteAllText("DevLog.txt", String.Empty);//Clear contents of DevLog
-            lbCueSys.Font = new Font("Comic Sans MS", 40, FontStyle.Bold);
+            lbCueSys.Font = new Font("Arial", 40, FontStyle.Bold);
             this.ActiveControl = tbUserName;
             dbConfig();
             mysqlConn.connect();
@@ -213,7 +235,19 @@ namespace CUESYSv._01
             devLogs("Login button clicked");
             //User+Pass check, not secure and only allows one login
             if (tbUserName.Text == "admin" && tbUserPass.Text == "admin")
-            { resetControls("landing"); devLogs("Login success for user " + tbUserName.Text); }//Login success
+            {
+
+                resetControls("login"); devLogs("Login success for user " + tbUserName.Text);
+
+                //enable all tool strip controls upon logging in.
+                viewDevLogsToolStripMenuItem.Enabled = true;
+                logoutToolStripMenuItem.Enabled = true;
+                customerToolStripMenuItem.Enabled = true;
+                flightsToolStripMenuItem.Enabled = true;
+                roomsToolStripMenuItem.Enabled = true;
+
+
+            }//Login success
             else
             { MessageBox.Show("Sorry, wrong password/user combo!"); devLogs("Login failure for user " + tbUserName.Text); }//Login failure
             tbUserName.Text = ""; tbUserPass.Text = ""; //Clear logon credentials
@@ -289,6 +323,13 @@ namespace CUESYSv._01
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //revert all tool strip controls to their disabled state
+            viewDevLogsToolStripMenuItem.Enabled = false;
+            logoutToolStripMenuItem.Enabled = false;
+            customerToolStripMenuItem.Enabled = false;
+            flightsToolStripMenuItem.Enabled = false;
+            roomsToolStripMenuItem.Enabled = false;
+
             resetControls("Program started"); devLogs("user logged out");
         }
 
@@ -299,6 +340,9 @@ namespace CUESYSv._01
 
         private void bookRoomToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            panAddBooking.Dock = DockStyle.Fill;
+            // addBookings newBooking = new addBookings();
+            // newBooking.ShowDialog(); //Load new form for adding a booking
             resetControls("Book Room"); devLogs("book room request");
         }
 
@@ -352,27 +396,33 @@ namespace CUESYSv._01
 
         private void createCustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            resetControls("create customer"); devLogs("create customer request");
+            addCustomer newCust = new addCustomer();
+            newCust.ShowDialog(); //Load new form for adding customer
+            //resetControls("create customer"); devLogs("create customer request");
         }
 
         private void viewBookingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             resetControls("landing"); devLogs("show bookings");
+            whichTable = "Bookings";
         }
 
         private void viewCustomersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             resetControls("view customers"); devLogs("show customers");
+            whichTable = "Customers";
         }
 
         private void btCustSave_Click(object sender, EventArgs e)
         {
             devLogs("insert new customer");
-            if (mysqlConn.connOpen() == true)
-            {
-                mysqlConn.insertCustomer(tbCustContact.Text, tbCustEmail.Text, tbCustTel.Text, tbCustAdd1.Text, tbCustAdd2.Text, tbCustTownCity.Text, tbCustPostcode.Text);
-            }
-            tbCustContact.Text = tbCustEmail.Text = tbCustTel.Text = tbCustAdd1.Text = tbCustAdd2.Text = tbCustTownCity.Text = tbCustPostcode.Text = "";
+            /*
+             if (mysqlConn.connOpen() == true)
+               {
+                   mysqlConn.insertCustomer(tbCustContact.Text, tbCustEmail.Text, tbCustTel.Text, tbCustAdd1.Text, tbCustAdd2.Text, tbCustTownCity.Text, tbCustPostcode.Text);
+               }
+               tbCustContact.Text = tbCustEmail.Text = tbCustTel.Text = tbCustAdd1.Text = tbCustAdd2.Text = tbCustTownCity.Text = tbCustPostcode.Text = "";
+            */
             resetControls("view customers");
         }
 
@@ -420,9 +470,198 @@ namespace CUESYSv._01
         private void viewFlightsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             resetControls("view flights"); devLogs("show flights");
+            whichTable = "Flights";
         }
 
+        private void btUpdate_Click(object sender, EventArgs e)
+        {
+            updateMode = true;
+            switch (whichTable) //switch statement to load different forms to update data based on table viewed, whichTable value assigned when a table is loaded.
+            {
+                case "Customers":
 
+                    customerIndex = dgRoomBookingsSummary.Rows[dgRoomBookingsSummary.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                    addCustomer newCust = new addCustomer();
+                    newCust.ShowDialog(); //Load new form for updating customer
+
+
+                    break;
+
+                case "Flights":
+
+                    flightDataIndex = dgRoomBookingsSummary.Rows[dgRoomBookingsSummary.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                    newFlight flightForm = new newFlight();
+                    flightForm.ShowDialog(); //Shows add flight form while preventing interaction with main form until it is closed.
+
+                    break;
+                case "Bookings":
+
+                    bookingIndex = dgRoomBookingsSummary.Rows[dgRoomBookingsSummary.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                    addBookings newBooking = new addBookings();
+                    newBooking.ShowDialog(); //Load new form for updating a booking
+
+                    break;
+                default:
+                    MessageBox.Show("No table selected");
+                    break;
+            }
+
+        }
+
+        private void tbCustContact_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btCustDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCustEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbCustEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCustContact_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCustTel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCustTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbCustTel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbCustPostcode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCustAdd1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCustPostcode_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbCustAdd1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbCustTownCity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCustAdd2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbCustTownCity_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbCustAdd2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btCustUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbBuilding_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbFloor.Items.Clear(); //resets combobox before loading possible departure locations
+
+            //filters possible departure locations based on the selected destination from the combobox value
+            dgFlightQuery.DataSource = mysqlConn.qry("SELECT * FROM `tblflights` WHERE flightDestination ='" + cbBuilding.Text + "'").Tables[0]; //load customer datagrid
+
+            foreach (DataGridViewRow originRow in dgFlightQuery.Rows)
+            {
+                if (originRow.Cells[1].Value != null)
+                {
+                    cbFloor.Items.Add(originRow.Cells[1].Value.ToString());
+                    flightId = originRow.Cells[0].Value.ToString();
+                }
+
+            }
+            cbFloor.Enabled = true;
+            btBookingCont.Enabled = false; //locks button to prompt user to select new origin if they change their destination
+
+
+        }
+
+        private void cbFloor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btBookingCont.Enabled = true;
+        }
+
+        private void btBookingCont_Click(object sender, EventArgs e)
+        {
+            flightOrigin = cbFloor.Text;
+            flightDestination = cbBuilding.Text;
+
+            addBookings newBooking = new addBookings();
+            newBooking.ShowDialog(); //Load new form for adding a booking
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string rowId = dgRoomBookingsSummary.SelectedCells[0].Value.ToString();
+            switch (whichTable)
+            {
+                case "Customers":
+
+                    customerIndex = dgRoomBookingsSummary.Rows[dgRoomBookingsSummary.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                    mysqlConn.deleteCustomer(rowId);
+                    MessageBox.Show("Deleted record from table");
+
+                    break;
+
+                case "Flights":
+
+                    flightDataIndex = dgRoomBookingsSummary.Rows[dgRoomBookingsSummary.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                    mysqlConn.deleteFlight(rowId);
+                    MessageBox.Show("Deleted record from table");
+
+                    break;
+                case "Bookings":
+                    mysqlConn.deleteBooking(rowId);
+                    MessageBox.Show("Deleted record from table");
+
+                    break;
+                default:
+                    MessageBox.Show("No table selected");
+                    break;
+            }
+
+        }
         ///// EVENTS END ///////////////////////////////////////////////////////////
     }
 }

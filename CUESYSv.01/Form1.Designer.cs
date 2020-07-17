@@ -49,20 +49,12 @@
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flightsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addFlightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewFlightsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.roomsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bookRoomToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewBookingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.btRoomB = new System.Windows.Forms.Button();
-            this.panFloorLayout = new System.Windows.Forms.Panel();
-            this.btRoomG = new System.Windows.Forms.Button();
-            this.btRoomE = new System.Windows.Forms.Button();
-            this.btRoomC = new System.Windows.Forms.Button();
-            this.btRoomA = new System.Windows.Forms.Button();
-            this.btRoomH = new System.Windows.Forms.Button();
-            this.btRoomF = new System.Windows.Forms.Button();
-            this.btRoomD = new System.Windows.Forms.Button();
-            this.cbFloor = new System.Windows.Forms.ComboBox();
             this.cbBuilding = new System.Windows.Forms.ComboBox();
             this.lbCustContact = new System.Windows.Forms.Label();
             this.tbCustContact = new System.Windows.Forms.TextBox();
@@ -101,20 +93,26 @@
             this.panLogin = new System.Windows.Forms.Panel();
             this.lblLogin = new System.Windows.Forms.Label();
             this.panAddBooking = new System.Windows.Forms.Panel();
+            this.btBookingCont = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbOrigin = new System.Windows.Forms.Label();
+            this.lbDestination = new System.Windows.Forms.Label();
+            this.dgFlightQuery = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
+            this.cbFloor = new System.Windows.Forms.ComboBox();
             this.panViewData = new System.Windows.Forms.Panel();
+            this.btUpdate = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.flightsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addFlightToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewFlightsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbWelcome = new System.Windows.Forms.Label();
+            this.btDeleteRecord = new System.Windows.Forms.Button();
             this.panClock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgRoomBookingsSummary)).BeginInit();
             this.mainMenu.SuspendLayout();
-            this.panFloorLayout.SuspendLayout();
             this.panAddCust.SuspendLayout();
             this.panBookingCalendar.SuspendLayout();
             this.panLogin.SuspendLayout();
             this.panAddBooking.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgFlightQuery)).BeginInit();
             this.panViewData.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,6 +128,7 @@
             // 
             this.tbUserPass.Location = new System.Drawing.Point(341, 165);
             this.tbUserPass.Name = "tbUserPass";
+            this.tbUserPass.PasswordChar = '*';
             this.tbUserPass.Size = new System.Drawing.Size(100, 20);
             this.tbUserPass.TabIndex = 1;
             this.tbUserPass.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbUserPass_KeyDown);
@@ -223,6 +222,7 @@
             this.dgRoomBookingsSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgRoomBookingsSummary.Location = new System.Drawing.Point(12, 65);
             this.dgRoomBookingsSummary.Name = "dgRoomBookingsSummary";
+            this.dgRoomBookingsSummary.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgRoomBookingsSummary.Size = new System.Drawing.Size(776, 351);
             this.dgRoomBookingsSummary.TabIndex = 7;
             this.dgRoomBookingsSummary.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgRoomBookingsSummary_CellMouseDoubleClick);
@@ -234,8 +234,7 @@
             this.fileToolStripMenuItem,
             this.customerToolStripMenuItem,
             this.flightsToolStripMenuItem,
-            this.roomsToolStripMenuItem,
-            this.toolStripMenuItem1});
+            this.roomsToolStripMenuItem});
             this.mainMenu.Location = new System.Drawing.Point(0, 0);
             this.mainMenu.Name = "mainMenu";
             this.mainMenu.Size = new System.Drawing.Size(800, 24);
@@ -253,22 +252,24 @@
             // 
             // viewDevLogsToolStripMenuItem
             // 
+            this.viewDevLogsToolStripMenuItem.Enabled = false;
             this.viewDevLogsToolStripMenuItem.Name = "viewDevLogsToolStripMenuItem";
-            this.viewDevLogsToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.viewDevLogsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewDevLogsToolStripMenuItem.Text = "View DevLogs";
             this.viewDevLogsToolStripMenuItem.Click += new System.EventHandler(this.viewDevLogsToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
+            this.logoutToolStripMenuItem.Enabled = false;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -277,6 +278,7 @@
             this.customerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createCustomerToolStripMenuItem,
             this.viewCustomersToolStripMenuItem});
+            this.customerToolStripMenuItem.Enabled = false;
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
             this.customerToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.customerToolStripMenuItem.Text = "Customers";
@@ -295,11 +297,36 @@
             this.viewCustomersToolStripMenuItem.Text = "View Customers";
             this.viewCustomersToolStripMenuItem.Click += new System.EventHandler(this.viewCustomersToolStripMenuItem_Click);
             // 
+            // flightsToolStripMenuItem
+            // 
+            this.flightsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.addFlightToolStripMenuItem,
+            this.viewFlightsToolStripMenuItem});
+            this.flightsToolStripMenuItem.Enabled = false;
+            this.flightsToolStripMenuItem.Name = "flightsToolStripMenuItem";
+            this.flightsToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.flightsToolStripMenuItem.Text = "Flights";
+            // 
+            // addFlightToolStripMenuItem
+            // 
+            this.addFlightToolStripMenuItem.Name = "addFlightToolStripMenuItem";
+            this.addFlightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addFlightToolStripMenuItem.Text = "Add Flight";
+            this.addFlightToolStripMenuItem.Click += new System.EventHandler(this.addFlightToolStripMenuItem_Click);
+            // 
+            // viewFlightsToolStripMenuItem
+            // 
+            this.viewFlightsToolStripMenuItem.Name = "viewFlightsToolStripMenuItem";
+            this.viewFlightsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewFlightsToolStripMenuItem.Text = "View Flights";
+            this.viewFlightsToolStripMenuItem.Click += new System.EventHandler(this.viewFlightsToolStripMenuItem_Click);
+            // 
             // roomsToolStripMenuItem
             // 
             this.roomsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bookRoomToolStripMenuItem,
             this.viewBookingsToolStripMenuItem});
+            this.roomsToolStripMenuItem.Enabled = false;
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
             this.roomsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.roomsToolStripMenuItem.Text = "Bookings";
@@ -318,157 +345,15 @@
             this.viewBookingsToolStripMenuItem.Text = "View Bookings";
             this.viewBookingsToolStripMenuItem.Click += new System.EventHandler(this.viewBookingsToolStripMenuItem_Click);
             // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(12, 20);
-            // 
-            // btRoomB
-            // 
-            this.btRoomB.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btRoomB.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btRoomB.Location = new System.Drawing.Point(155, 5);
-            this.btRoomB.Name = "btRoomB";
-            this.btRoomB.Size = new System.Drawing.Size(110, 100);
-            this.btRoomB.TabIndex = 9;
-            this.btRoomB.UseVisualStyleBackColor = true;
-            this.btRoomB.Click += new System.EventHandler(this.btRoomB_Click);
-            // 
-            // panFloorLayout
-            // 
-            this.panFloorLayout.BackgroundImage = global::CUESYSv._01.Properties.Resources.GROUND_FLOOR;
-            this.panFloorLayout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panFloorLayout.Controls.Add(this.btRoomG);
-            this.panFloorLayout.Controls.Add(this.btRoomE);
-            this.panFloorLayout.Controls.Add(this.btRoomC);
-            this.panFloorLayout.Controls.Add(this.btRoomA);
-            this.panFloorLayout.Controls.Add(this.btRoomH);
-            this.panFloorLayout.Controls.Add(this.btRoomF);
-            this.panFloorLayout.Controls.Add(this.btRoomD);
-            this.panFloorLayout.Controls.Add(this.btRoomB);
-            this.panFloorLayout.Location = new System.Drawing.Point(128, 92);
-            this.panFloorLayout.Name = "panFloorLayout";
-            this.panFloorLayout.Size = new System.Drawing.Size(602, 312);
-            this.panFloorLayout.TabIndex = 10;
-            // 
-            // btRoomG
-            // 
-            this.btRoomG.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btRoomG.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btRoomG.Location = new System.Drawing.Point(411, 206);
-            this.btRoomG.Name = "btRoomG";
-            this.btRoomG.Size = new System.Drawing.Size(110, 100);
-            this.btRoomG.TabIndex = 16;
-            this.btRoomG.UseVisualStyleBackColor = true;
-            this.btRoomG.Click += new System.EventHandler(this.btRoomG_Click);
-            // 
-            // btRoomE
-            // 
-            this.btRoomE.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btRoomE.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btRoomE.Location = new System.Drawing.Point(300, 206);
-            this.btRoomE.Name = "btRoomE";
-            this.btRoomE.Size = new System.Drawing.Size(110, 100);
-            this.btRoomE.TabIndex = 15;
-            this.btRoomE.UseVisualStyleBackColor = true;
-            this.btRoomE.Click += new System.EventHandler(this.btRoomE_Click);
-            // 
-            // btRoomC
-            // 
-            this.btRoomC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btRoomC.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btRoomC.Location = new System.Drawing.Point(191, 206);
-            this.btRoomC.Name = "btRoomC";
-            this.btRoomC.Size = new System.Drawing.Size(110, 100);
-            this.btRoomC.TabIndex = 14;
-            this.btRoomC.UseVisualStyleBackColor = true;
-            this.btRoomC.Click += new System.EventHandler(this.btRoomC_Click);
-            // 
-            // btRoomA
-            // 
-            this.btRoomA.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btRoomA.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btRoomA.Location = new System.Drawing.Point(80, 206);
-            this.btRoomA.Name = "btRoomA";
-            this.btRoomA.Size = new System.Drawing.Size(110, 100);
-            this.btRoomA.TabIndex = 13;
-            this.btRoomA.UseVisualStyleBackColor = true;
-            this.btRoomA.Click += new System.EventHandler(this.btRoomA_Click);
-            // 
-            // btRoomH
-            // 
-            this.btRoomH.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btRoomH.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btRoomH.Location = new System.Drawing.Point(486, 5);
-            this.btRoomH.Name = "btRoomH";
-            this.btRoomH.Size = new System.Drawing.Size(110, 100);
-            this.btRoomH.TabIndex = 12;
-            this.btRoomH.UseVisualStyleBackColor = true;
-            this.btRoomH.Click += new System.EventHandler(this.btRoomH_Click);
-            // 
-            // btRoomF
-            // 
-            this.btRoomF.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btRoomF.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btRoomF.Location = new System.Drawing.Point(375, 5);
-            this.btRoomF.Name = "btRoomF";
-            this.btRoomF.Size = new System.Drawing.Size(110, 100);
-            this.btRoomF.TabIndex = 11;
-            this.btRoomF.UseVisualStyleBackColor = true;
-            this.btRoomF.Click += new System.EventHandler(this.btRoomF_Click);
-            // 
-            // btRoomD
-            // 
-            this.btRoomD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btRoomD.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btRoomD.Location = new System.Drawing.Point(266, 5);
-            this.btRoomD.Name = "btRoomD";
-            this.btRoomD.Size = new System.Drawing.Size(110, 100);
-            this.btRoomD.TabIndex = 10;
-            this.btRoomD.UseVisualStyleBackColor = true;
-            this.btRoomD.Click += new System.EventHandler(this.btRoomD_Click);
-            // 
-            // cbFloor
-            // 
-            this.cbFloor.FormattingEnabled = true;
-            this.cbFloor.Items.AddRange(new object[] {
-            "Ground",
-            "First",
-            "Second",
-            "Third",
-            "Fourth"});
-            this.cbFloor.Location = new System.Drawing.Point(450, 54);
-            this.cbFloor.Name = "cbFloor";
-            this.cbFloor.Size = new System.Drawing.Size(121, 21);
-            this.cbFloor.TabIndex = 11;
-            // 
             // cbBuilding
             // 
+            this.cbBuilding.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbBuilding.FormattingEnabled = true;
-            this.cbBuilding.Items.AddRange(new object[] {
-            "Armstrong Siddeley",
-            "Jaguar",
-            "William Lyons"});
-            this.cbBuilding.Location = new System.Drawing.Point(298, 54);
+            this.cbBuilding.Location = new System.Drawing.Point(256, 119);
             this.cbBuilding.Name = "cbBuilding";
             this.cbBuilding.Size = new System.Drawing.Size(121, 21);
             this.cbBuilding.TabIndex = 12;
+            this.cbBuilding.SelectedIndexChanged += new System.EventHandler(this.cbBuilding_SelectedIndexChanged);
             // 
             // lbCustContact
             // 
@@ -478,6 +363,7 @@
             this.lbCustContact.Size = new System.Drawing.Size(91, 13);
             this.lbCustContact.TabIndex = 13;
             this.lbCustContact.Text = "Customer Contact";
+            this.lbCustContact.Click += new System.EventHandler(this.lbCustContact_Click);
             // 
             // tbCustContact
             // 
@@ -485,6 +371,7 @@
             this.tbCustContact.Name = "tbCustContact";
             this.tbCustContact.Size = new System.Drawing.Size(100, 20);
             this.tbCustContact.TabIndex = 14;
+            this.tbCustContact.TextChanged += new System.EventHandler(this.tbCustContact_TextChanged);
             // 
             // tbCustEmail
             // 
@@ -492,6 +379,7 @@
             this.tbCustEmail.Name = "tbCustEmail";
             this.tbCustEmail.Size = new System.Drawing.Size(100, 20);
             this.tbCustEmail.TabIndex = 16;
+            this.tbCustEmail.TextChanged += new System.EventHandler(this.tbCustEmail_TextChanged);
             // 
             // lbCustEmail
             // 
@@ -501,6 +389,7 @@
             this.lbCustEmail.Size = new System.Drawing.Size(72, 13);
             this.lbCustEmail.TabIndex = 15;
             this.lbCustEmail.Text = "Contact Email";
+            this.lbCustEmail.Click += new System.EventHandler(this.lbCustEmail_Click);
             // 
             // tbCustTel
             // 
@@ -508,6 +397,7 @@
             this.tbCustTel.Name = "tbCustTel";
             this.tbCustTel.Size = new System.Drawing.Size(100, 20);
             this.tbCustTel.TabIndex = 18;
+            this.tbCustTel.TextChanged += new System.EventHandler(this.tbCustTel_TextChanged);
             // 
             // lbCustTel
             // 
@@ -517,6 +407,7 @@
             this.lbCustTel.Size = new System.Drawing.Size(98, 13);
             this.lbCustTel.TabIndex = 17;
             this.lbCustTel.Text = "Contact Telephone";
+            this.lbCustTel.Click += new System.EventHandler(this.lbCustTel_Click);
             // 
             // tbCustTownCity
             // 
@@ -524,6 +415,7 @@
             this.tbCustTownCity.Name = "tbCustTownCity";
             this.tbCustTownCity.Size = new System.Drawing.Size(100, 20);
             this.tbCustTownCity.TabIndex = 24;
+            this.tbCustTownCity.TextChanged += new System.EventHandler(this.tbCustTownCity_TextChanged);
             // 
             // lbCustTownCity
             // 
@@ -533,6 +425,7 @@
             this.lbCustTownCity.Size = new System.Drawing.Size(62, 13);
             this.lbCustTownCity.TabIndex = 23;
             this.lbCustTownCity.Text = "Town / City";
+            this.lbCustTownCity.Click += new System.EventHandler(this.lbCustTownCity_Click);
             // 
             // tbCustAdd2
             // 
@@ -540,6 +433,7 @@
             this.tbCustAdd2.Name = "tbCustAdd2";
             this.tbCustAdd2.Size = new System.Drawing.Size(100, 20);
             this.tbCustAdd2.TabIndex = 22;
+            this.tbCustAdd2.TextChanged += new System.EventHandler(this.tbCustAdd2_TextChanged);
             // 
             // lbCustAdd2
             // 
@@ -549,6 +443,7 @@
             this.lbCustAdd2.Size = new System.Drawing.Size(77, 13);
             this.lbCustAdd2.TabIndex = 21;
             this.lbCustAdd2.Text = "Address Line 2";
+            this.lbCustAdd2.Click += new System.EventHandler(this.lbCustAdd2_Click);
             // 
             // tbCustAdd1
             // 
@@ -556,6 +451,7 @@
             this.tbCustAdd1.Name = "tbCustAdd1";
             this.tbCustAdd1.Size = new System.Drawing.Size(100, 20);
             this.tbCustAdd1.TabIndex = 20;
+            this.tbCustAdd1.TextChanged += new System.EventHandler(this.tbCustAdd1_TextChanged);
             // 
             // lbCustAdd1
             // 
@@ -565,6 +461,7 @@
             this.lbCustAdd1.Size = new System.Drawing.Size(77, 13);
             this.lbCustAdd1.TabIndex = 19;
             this.lbCustAdd1.Text = "Address Line 1";
+            this.lbCustAdd1.Click += new System.EventHandler(this.lbCustAdd1_Click);
             // 
             // tbCustPostcode
             // 
@@ -572,6 +469,7 @@
             this.tbCustPostcode.Name = "tbCustPostcode";
             this.tbCustPostcode.Size = new System.Drawing.Size(100, 20);
             this.tbCustPostcode.TabIndex = 26;
+            this.tbCustPostcode.TextChanged += new System.EventHandler(this.tbCustPostcode_TextChanged);
             // 
             // lbCustPostcode
             // 
@@ -581,6 +479,7 @@
             this.lbCustPostcode.Size = new System.Drawing.Size(52, 13);
             this.lbCustPostcode.TabIndex = 25;
             this.lbCustPostcode.Text = "Postcode";
+            this.lbCustPostcode.Click += new System.EventHandler(this.lbCustPostcode_Click);
             // 
             // lbCustTitle
             // 
@@ -590,6 +489,7 @@
             this.lbCustTitle.Name = "lbCustTitle";
             this.lbCustTitle.Size = new System.Drawing.Size(0, 20);
             this.lbCustTitle.TabIndex = 27;
+            this.lbCustTitle.Click += new System.EventHandler(this.lbCustTitle_Click);
             // 
             // btCustSave
             // 
@@ -609,6 +509,7 @@
             this.btCustUpdate.TabIndex = 29;
             this.btCustUpdate.Text = "Update";
             this.btCustUpdate.UseVisualStyleBackColor = true;
+            this.btCustUpdate.Click += new System.EventHandler(this.btCustUpdate_Click);
             // 
             // btCustDelete
             // 
@@ -618,6 +519,7 @@
             this.btCustDelete.TabIndex = 30;
             this.btCustDelete.Text = "Delete";
             this.btCustDelete.UseVisualStyleBackColor = true;
+            this.btCustDelete.Click += new System.EventHandler(this.btCustDelete_Click);
             // 
             // btBook
             // 
@@ -751,9 +653,9 @@
             this.panAddCust.Controls.Add(this.lbCustTownCity);
             this.panAddCust.Controls.Add(this.tbCustAdd2);
             this.panAddCust.Controls.Add(this.btCustUpdate);
-            this.panAddCust.Location = new System.Drawing.Point(12, 393);
+            this.panAddCust.Location = new System.Drawing.Point(0, 392);
             this.panAddCust.Name = "panAddCust";
-            this.panAddCust.Size = new System.Drawing.Size(110, 45);
+            this.panAddCust.Size = new System.Drawing.Size(99, 46);
             this.panAddCust.TabIndex = 44;
             // 
             // lblAddCust
@@ -821,14 +723,65 @@
             // 
             // panAddBooking
             // 
+            this.panAddBooking.Controls.Add(this.btBookingCont);
+            this.panAddBooking.Controls.Add(this.label8);
+            this.panAddBooking.Controls.Add(this.lbOrigin);
+            this.panAddBooking.Controls.Add(this.lbDestination);
+            this.panAddBooking.Controls.Add(this.dgFlightQuery);
             this.panAddBooking.Controls.Add(this.label6);
             this.panAddBooking.Controls.Add(this.cbBuilding);
-            this.panAddBooking.Controls.Add(this.panFloorLayout);
             this.panAddBooking.Controls.Add(this.cbFloor);
-            this.panAddBooking.Location = new System.Drawing.Point(513, 393);
+            this.panAddBooking.Location = new System.Drawing.Point(510, 392);
             this.panAddBooking.Name = "panAddBooking";
-            this.panAddBooking.Size = new System.Drawing.Size(110, 45);
+            this.panAddBooking.Size = new System.Drawing.Size(116, 46);
             this.panAddBooking.TabIndex = 47;
+            // 
+            // btBookingCont
+            // 
+            this.btBookingCont.Location = new System.Drawing.Point(346, 211);
+            this.btBookingCont.Name = "btBookingCont";
+            this.btBookingCont.Size = new System.Drawing.Size(75, 23);
+            this.btBookingCont.TabIndex = 52;
+            this.btBookingCont.Text = "Continue";
+            this.btBookingCont.UseVisualStyleBackColor = true;
+            this.btBookingCont.Click += new System.EventHandler(this.btBookingCont_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label8.Location = new System.Drawing.Point(335, 43);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(110, 20);
+            this.label8.TabIndex = 51;
+            this.label8.Text = "Select a Flight";
+            // 
+            // lbOrigin
+            // 
+            this.lbOrigin.AutoSize = true;
+            this.lbOrigin.Location = new System.Drawing.Point(423, 103);
+            this.lbOrigin.Name = "lbOrigin";
+            this.lbOrigin.Size = new System.Drawing.Size(34, 13);
+            this.lbOrigin.TabIndex = 50;
+            this.lbOrigin.Text = "Origin";
+            // 
+            // lbDestination
+            // 
+            this.lbDestination.AutoSize = true;
+            this.lbDestination.Location = new System.Drawing.Point(256, 103);
+            this.lbDestination.Name = "lbDestination";
+            this.lbDestination.Size = new System.Drawing.Size(60, 13);
+            this.lbDestination.TabIndex = 49;
+            this.lbDestination.Text = "Destination";
+            // 
+            // dgFlightQuery
+            // 
+            this.dgFlightQuery.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgFlightQuery.Location = new System.Drawing.Point(545, 261);
+            this.dgFlightQuery.Name = "dgFlightQuery";
+            this.dgFlightQuery.Size = new System.Drawing.Size(240, 150);
+            this.dgFlightQuery.TabIndex = 48;
+            this.dgFlightQuery.Visible = false;
             // 
             // label6
             // 
@@ -840,14 +793,37 @@
             this.label6.Text = "panAddBooking";
             this.label6.Visible = false;
             // 
+            // cbFloor
+            // 
+            this.cbFloor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFloor.FormattingEnabled = true;
+            this.cbFloor.Location = new System.Drawing.Point(404, 119);
+            this.cbFloor.Name = "cbFloor";
+            this.cbFloor.Size = new System.Drawing.Size(121, 21);
+            this.cbFloor.TabIndex = 11;
+            this.cbFloor.SelectedIndexChanged += new System.EventHandler(this.cbFloor_SelectedIndexChanged);
+            // 
             // panViewData
             // 
+            this.panViewData.Controls.Add(this.btDeleteRecord);
+            this.panViewData.Controls.Add(this.btUpdate);
             this.panViewData.Controls.Add(this.label7);
             this.panViewData.Controls.Add(this.dgRoomBookingsSummary);
-            this.panViewData.Location = new System.Drawing.Point(179, 392);
+            this.panViewData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panViewData.Location = new System.Drawing.Point(0, 24);
             this.panViewData.Name = "panViewData";
-            this.panViewData.Size = new System.Drawing.Size(110, 46);
+            this.panViewData.Size = new System.Drawing.Size(800, 426);
             this.panViewData.TabIndex = 48;
+            // 
+            // btUpdate
+            // 
+            this.btUpdate.Location = new System.Drawing.Point(551, 17);
+            this.btUpdate.Name = "btUpdate";
+            this.btUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btUpdate.TabIndex = 47;
+            this.btUpdate.Text = "Update";
+            this.btUpdate.UseVisualStyleBackColor = true;
+            this.btUpdate.Click += new System.EventHandler(this.btUpdate_Click);
             // 
             // label7
             // 
@@ -859,28 +835,25 @@
             this.label7.Text = "panViewData";
             this.label7.Visible = false;
             // 
-            // flightsToolStripMenuItem
+            // lbWelcome
             // 
-            this.flightsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addFlightToolStripMenuItem,
-            this.viewFlightsToolStripMenuItem});
-            this.flightsToolStripMenuItem.Name = "flightsToolStripMenuItem";
-            this.flightsToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.flightsToolStripMenuItem.Text = "Flights";
+            this.lbWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lbWelcome.Location = new System.Drawing.Point(147, 125);
+            this.lbWelcome.Name = "lbWelcome";
+            this.lbWelcome.Size = new System.Drawing.Size(526, 34);
+            this.lbWelcome.TabIndex = 47;
+            this.lbWelcome.Text = "Welcome, please select an option from the tool strip to manage bookings.";
+            this.lbWelcome.Visible = false;
             // 
-            // addFlightToolStripMenuItem
+            // btDeleteRecord
             // 
-            this.addFlightToolStripMenuItem.Name = "addFlightToolStripMenuItem";
-            this.addFlightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.addFlightToolStripMenuItem.Text = "Add Flight";
-            this.addFlightToolStripMenuItem.Click += new System.EventHandler(this.addFlightToolStripMenuItem_Click);
-            // 
-            // viewFlightsToolStripMenuItem
-            // 
-            this.viewFlightsToolStripMenuItem.Name = "viewFlightsToolStripMenuItem";
-            this.viewFlightsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.viewFlightsToolStripMenuItem.Text = "View Flights";
-            this.viewFlightsToolStripMenuItem.Click += new System.EventHandler(this.viewFlightsToolStripMenuItem_Click);
+            this.btDeleteRecord.Location = new System.Drawing.Point(469, 17);
+            this.btDeleteRecord.Name = "btDeleteRecord";
+            this.btDeleteRecord.Size = new System.Drawing.Size(75, 23);
+            this.btDeleteRecord.TabIndex = 48;
+            this.btDeleteRecord.Text = "Delete";
+            this.btDeleteRecord.UseVisualStyleBackColor = true;
+            this.btDeleteRecord.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -895,6 +868,8 @@
             this.Controls.Add(this.lbCueSys);
             this.Controls.Add(this.mainMenu);
             this.Controls.Add(this.panLogin);
+            this.Controls.Add(this.lbWelcome);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.mainMenu;
             this.Name = "Form1";
             this.Text = "Azmansys v1.0 - BT Airlines";
@@ -904,7 +879,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgRoomBookingsSummary)).EndInit();
             this.mainMenu.ResumeLayout(false);
             this.mainMenu.PerformLayout();
-            this.panFloorLayout.ResumeLayout(false);
             this.panAddCust.ResumeLayout(false);
             this.panAddCust.PerformLayout();
             this.panBookingCalendar.ResumeLayout(false);
@@ -913,6 +887,7 @@
             this.panLogin.PerformLayout();
             this.panAddBooking.ResumeLayout(false);
             this.panAddBooking.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgFlightQuery)).EndInit();
             this.panViewData.ResumeLayout(false);
             this.panViewData.PerformLayout();
             this.ResumeLayout(false);
@@ -941,17 +916,7 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem roomsToolStripMenuItem;
-        private System.Windows.Forms.Button btRoomB;
         private System.Windows.Forms.ToolStripMenuItem bookRoomToolStripMenuItem;
-        private System.Windows.Forms.Panel panFloorLayout;
-        private System.Windows.Forms.Button btRoomG;
-        private System.Windows.Forms.Button btRoomE;
-        private System.Windows.Forms.Button btRoomC;
-        private System.Windows.Forms.Button btRoomA;
-        private System.Windows.Forms.Button btRoomH;
-        private System.Windows.Forms.Button btRoomF;
-        private System.Windows.Forms.Button btRoomD;
-        private System.Windows.Forms.ComboBox cbFloor;
         private System.Windows.Forms.ComboBox cbBuilding;
         private System.Windows.Forms.ToolStripMenuItem createCustomerToolStripMenuItem;
         private System.Windows.Forms.Label lbCustContact;
@@ -996,10 +961,18 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panViewData;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem flightsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addFlightToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewFlightsToolStripMenuItem;
+        private System.Windows.Forms.Button btUpdate;
+        private System.Windows.Forms.ComboBox cbFloor;
+        private System.Windows.Forms.DataGridView dgFlightQuery;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbOrigin;
+        private System.Windows.Forms.Label lbDestination;
+        private System.Windows.Forms.Button btBookingCont;
+        private System.Windows.Forms.Label lbWelcome;
+        private System.Windows.Forms.Button btDeleteRecord;
     }
 }
 

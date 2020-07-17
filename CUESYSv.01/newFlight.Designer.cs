@@ -56,7 +56,7 @@
             // lbFlightOrigin
             // 
             this.lbFlightOrigin.AutoSize = true;
-            this.lbFlightOrigin.Location = new System.Drawing.Point(28, 40);
+            this.lbFlightOrigin.Location = new System.Drawing.Point(31, 37);
             this.lbFlightOrigin.Name = "lbFlightOrigin";
             this.lbFlightOrigin.Size = new System.Drawing.Size(37, 13);
             this.lbFlightOrigin.TabIndex = 31;
@@ -71,7 +71,7 @@
             // 
             // btFlightDelete
             // 
-            this.btFlightDelete.Location = new System.Drawing.Point(243, 467);
+            this.btFlightDelete.Location = new System.Drawing.Point(379, 326);
             this.btFlightDelete.Name = "btFlightDelete";
             this.btFlightDelete.Size = new System.Drawing.Size(100, 23);
             this.btFlightDelete.TabIndex = 48;
@@ -82,7 +82,7 @@
             // lbFlightDestination
             // 
             this.lbFlightDestination.AutoSize = true;
-            this.lbFlightDestination.Location = new System.Drawing.Point(28, 65);
+            this.lbFlightDestination.Location = new System.Drawing.Point(31, 65);
             this.lbFlightDestination.Name = "lbFlightDestination";
             this.lbFlightDestination.Size = new System.Drawing.Size(63, 13);
             this.lbFlightDestination.TabIndex = 33;
@@ -97,7 +97,7 @@
             // 
             // btFlightSave
             // 
-            this.btFlightSave.Location = new System.Drawing.Point(137, 467);
+            this.btFlightSave.Location = new System.Drawing.Point(273, 326);
             this.btFlightSave.Name = "btFlightSave";
             this.btFlightSave.Size = new System.Drawing.Size(100, 23);
             this.btFlightSave.TabIndex = 8;
@@ -108,7 +108,7 @@
             // lbSeatCapacity
             // 
             this.lbSeatCapacity.AutoSize = true;
-            this.lbSeatCapacity.Location = new System.Drawing.Point(28, 91);
+            this.lbSeatCapacity.Location = new System.Drawing.Point(30, 91);
             this.lbSeatCapacity.Name = "lbSeatCapacity";
             this.lbSeatCapacity.Size = new System.Drawing.Size(76, 13);
             this.lbSeatCapacity.TabIndex = 35;
@@ -135,7 +135,7 @@
             // lbFlightDeparture
             // 
             this.lbFlightDeparture.AutoSize = true;
-            this.lbFlightDeparture.Location = new System.Drawing.Point(28, 120);
+            this.lbFlightDeparture.Location = new System.Drawing.Point(259, 37);
             this.lbFlightDeparture.Name = "lbFlightDeparture";
             this.lbFlightDeparture.Size = new System.Drawing.Size(83, 13);
             this.lbFlightDeparture.TabIndex = 37;
@@ -144,7 +144,7 @@
             // lbFlightDuration
             // 
             this.lbFlightDuration.AutoSize = true;
-            this.lbFlightDuration.Location = new System.Drawing.Point(28, 323);
+            this.lbFlightDuration.Location = new System.Drawing.Point(259, 236);
             this.lbFlightDuration.Name = "lbFlightDuration";
             this.lbFlightDuration.Size = new System.Drawing.Size(87, 13);
             this.lbFlightDuration.TabIndex = 39;
@@ -153,7 +153,7 @@
             // lbPrice
             // 
             this.lbPrice.AutoSize = true;
-            this.lbPrice.Location = new System.Drawing.Point(30, 349);
+            this.lbPrice.Location = new System.Drawing.Point(30, 182);
             this.lbPrice.Name = "lbPrice";
             this.lbPrice.Size = new System.Drawing.Size(76, 13);
             this.lbPrice.TabIndex = 41;
@@ -161,7 +161,7 @@
             // 
             // tbDuration
             // 
-            this.tbDuration.Location = new System.Drawing.Point(132, 320);
+            this.tbDuration.Location = new System.Drawing.Point(360, 233);
             this.tbDuration.Name = "tbDuration";
             this.tbDuration.Size = new System.Drawing.Size(100, 20);
             this.tbDuration.TabIndex = 6;
@@ -169,7 +169,7 @@
             // 
             // btFlightUpdate
             // 
-            this.btFlightUpdate.Location = new System.Drawing.Point(31, 467);
+            this.btFlightUpdate.Location = new System.Drawing.Point(167, 326);
             this.btFlightUpdate.Name = "btFlightUpdate";
             this.btFlightUpdate.Size = new System.Drawing.Size(100, 23);
             this.btFlightUpdate.TabIndex = 47;
@@ -180,7 +180,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 297);
+            this.label1.Location = new System.Drawing.Point(259, 214);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 13);
             this.label1.TabIndex = 50;
@@ -188,7 +188,7 @@
             // 
             // tbChild
             // 
-            this.tbChild.Location = new System.Drawing.Point(132, 372);
+            this.tbChild.Location = new System.Drawing.Point(132, 205);
             this.tbChild.Name = "tbChild";
             this.tbChild.ReadOnly = true;
             this.tbChild.Size = new System.Drawing.Size(100, 20);
@@ -197,7 +197,7 @@
             // 
             // tbInfant
             // 
-            this.tbInfant.Location = new System.Drawing.Point(132, 398);
+            this.tbInfant.Location = new System.Drawing.Point(132, 231);
             this.tbInfant.Name = "tbInfant";
             this.tbInfant.ReadOnly = true;
             this.tbInfant.Size = new System.Drawing.Size(100, 20);
@@ -207,7 +207,7 @@
             // lbChild
             // 
             this.lbChild.AutoSize = true;
-            this.lbChild.Location = new System.Drawing.Point(30, 375);
+            this.lbChild.Location = new System.Drawing.Point(30, 208);
             this.lbChild.Name = "lbChild";
             this.lbChild.Size = new System.Drawing.Size(75, 13);
             this.lbChild.TabIndex = 54;
@@ -216,7 +216,7 @@
             // lbInfant
             // 
             this.lbInfant.AutoSize = true;
-            this.lbInfant.Location = new System.Drawing.Point(31, 401);
+            this.lbInfant.Location = new System.Drawing.Point(31, 234);
             this.lbInfant.Name = "lbInfant";
             this.lbInfant.Size = new System.Drawing.Size(79, 13);
             this.lbInfant.TabIndex = 55;
@@ -225,7 +225,7 @@
             // mcDate
             // 
             this.mcDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 3.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mcDate.Location = new System.Drawing.Point(132, 120);
+            this.mcDate.Location = new System.Drawing.Point(360, 37);
             this.mcDate.Name = "mcDate";
             this.mcDate.TabIndex = 4;
             // 
@@ -233,7 +233,7 @@
             // 
             this.dtDepTime.CustomFormat = "HH:mm ";
             this.dtDepTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtDepTime.Location = new System.Drawing.Point(132, 294);
+            this.dtDepTime.Location = new System.Drawing.Point(360, 208);
             this.dtDepTime.Name = "dtDepTime";
             this.dtDepTime.ShowUpDown = true;
             this.dtDepTime.Size = new System.Drawing.Size(100, 20);
@@ -242,7 +242,7 @@
             // 
             // tbPrice
             // 
-            this.tbPrice.Location = new System.Drawing.Point(132, 346);
+            this.tbPrice.Location = new System.Drawing.Point(132, 179);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(100, 20);
             this.tbPrice.TabIndex = 56;
@@ -255,7 +255,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(387, 502);
+            this.ClientSize = new System.Drawing.Size(621, 384);
             this.Controls.Add(this.tbPrice);
             this.Controls.Add(this.dtDepTime);
             this.Controls.Add(this.lbInfant);
@@ -278,8 +278,9 @@
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.tbDuration);
             this.Controls.Add(this.btFlightUpdate);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "newFlight";
-            this.Text = "Add New Flight";
+            this.Text = "Add New Flight - BT Airlines";
             this.Load += new System.EventHandler(this.newFlight_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

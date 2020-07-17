@@ -44,3 +44,5 @@ B:\Liam\Documents\Digital & Technology Solutions\Year 1\405IT\Assignment\CW2\Azm
 B:\Liam\Documents\Digital & Technology Solutions\Year 1\405IT\Assignment\CW2\Azmansys\405IT-Azmansys\CUESYSv.01\obj\Debug\CUESYSv.01.exe
 B:\Liam\Documents\Digital & Technology Solutions\Year 1\405IT\Assignment\CW2\Azmansys\405IT-Azmansys\CUESYSv.01\obj\Debug\CUESYSv.01.pdb
 B:\Liam\Documents\Digital & Technology Solutions\Year 1\405IT\Assignment\CW2\Azmansys\405IT-Azmansys\CUESYSv.01\obj\Debug\CUESYSv._01.newFlight.resources
+B:\Liam\Documents\Digital & Technology Solutions\Year 1\405IT\Assignment\CW2\Azmansys\405IT-Azmansys\CUESYSv.01\obj\Debug\CUESYSv._01.addCustomer.resources
+B:\Liam\Documents\Digital & Technology Solutions\Year 1\405IT\Assignment\CW2\Azmansys\405IT-Azmansys\CUESYSv.01\obj\Debug\CUESYSv._01.addBookings.resources
