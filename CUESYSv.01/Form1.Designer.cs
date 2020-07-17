@@ -101,10 +101,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cbFloor = new System.Windows.Forms.ComboBox();
             this.panViewData = new System.Windows.Forms.Panel();
+            this.btDeleteRecord = new System.Windows.Forms.Button();
             this.btUpdate = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.lbWelcome = new System.Windows.Forms.Label();
-            this.btDeleteRecord = new System.Windows.Forms.Button();
             this.panClock.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgRoomBookingsSummary)).BeginInit();
             this.mainMenu.SuspendLayout();
@@ -254,7 +254,7 @@
             // 
             this.viewDevLogsToolStripMenuItem.Enabled = false;
             this.viewDevLogsToolStripMenuItem.Name = "viewDevLogsToolStripMenuItem";
-            this.viewDevLogsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewDevLogsToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.viewDevLogsToolStripMenuItem.Text = "View DevLogs";
             this.viewDevLogsToolStripMenuItem.Click += new System.EventHandler(this.viewDevLogsToolStripMenuItem_Click);
             // 
@@ -262,14 +262,14 @@
             // 
             this.logoutToolStripMenuItem.Enabled = false;
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -286,14 +286,14 @@
             // createCustomerToolStripMenuItem
             // 
             this.createCustomerToolStripMenuItem.Name = "createCustomerToolStripMenuItem";
-            this.createCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.createCustomerToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.createCustomerToolStripMenuItem.Text = "Create Customer";
             this.createCustomerToolStripMenuItem.Click += new System.EventHandler(this.createCustomerToolStripMenuItem_Click);
             // 
             // viewCustomersToolStripMenuItem
             // 
             this.viewCustomersToolStripMenuItem.Name = "viewCustomersToolStripMenuItem";
-            this.viewCustomersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewCustomersToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.viewCustomersToolStripMenuItem.Text = "View Customers";
             this.viewCustomersToolStripMenuItem.Click += new System.EventHandler(this.viewCustomersToolStripMenuItem_Click);
             // 
@@ -310,14 +310,14 @@
             // addFlightToolStripMenuItem
             // 
             this.addFlightToolStripMenuItem.Name = "addFlightToolStripMenuItem";
-            this.addFlightToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addFlightToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.addFlightToolStripMenuItem.Text = "Add Flight";
             this.addFlightToolStripMenuItem.Click += new System.EventHandler(this.addFlightToolStripMenuItem_Click);
             // 
             // viewFlightsToolStripMenuItem
             // 
             this.viewFlightsToolStripMenuItem.Name = "viewFlightsToolStripMenuItem";
-            this.viewFlightsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewFlightsToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.viewFlightsToolStripMenuItem.Text = "View Flights";
             this.viewFlightsToolStripMenuItem.Click += new System.EventHandler(this.viewFlightsToolStripMenuItem_Click);
             // 
@@ -334,14 +334,14 @@
             // bookRoomToolStripMenuItem
             // 
             this.bookRoomToolStripMenuItem.Name = "bookRoomToolStripMenuItem";
-            this.bookRoomToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bookRoomToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.bookRoomToolStripMenuItem.Text = "Book Flights";
             this.bookRoomToolStripMenuItem.Click += new System.EventHandler(this.bookRoomToolStripMenuItem_Click);
             // 
             // viewBookingsToolStripMenuItem
             // 
             this.viewBookingsToolStripMenuItem.Name = "viewBookingsToolStripMenuItem";
-            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewBookingsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.viewBookingsToolStripMenuItem.Text = "View Bookings";
             this.viewBookingsToolStripMenuItem.Click += new System.EventHandler(this.viewBookingsToolStripMenuItem_Click);
             // 
@@ -809,11 +809,20 @@
             this.panViewData.Controls.Add(this.btUpdate);
             this.panViewData.Controls.Add(this.label7);
             this.panViewData.Controls.Add(this.dgRoomBookingsSummary);
-            this.panViewData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panViewData.Location = new System.Drawing.Point(0, 24);
+            this.panViewData.Location = new System.Drawing.Point(176, 392);
             this.panViewData.Name = "panViewData";
-            this.panViewData.Size = new System.Drawing.Size(800, 426);
+            this.panViewData.Size = new System.Drawing.Size(126, 46);
             this.panViewData.TabIndex = 48;
+            // 
+            // btDeleteRecord
+            // 
+            this.btDeleteRecord.Location = new System.Drawing.Point(469, 17);
+            this.btDeleteRecord.Name = "btDeleteRecord";
+            this.btDeleteRecord.Size = new System.Drawing.Size(75, 23);
+            this.btDeleteRecord.TabIndex = 48;
+            this.btDeleteRecord.Text = "Delete";
+            this.btDeleteRecord.UseVisualStyleBackColor = true;
+            this.btDeleteRecord.Click += new System.EventHandler(this.button1_Click);
             // 
             // btUpdate
             // 
@@ -844,16 +853,6 @@
             this.lbWelcome.TabIndex = 47;
             this.lbWelcome.Text = "Welcome, please select an option from the tool strip to manage bookings.";
             this.lbWelcome.Visible = false;
-            // 
-            // btDeleteRecord
-            // 
-            this.btDeleteRecord.Location = new System.Drawing.Point(469, 17);
-            this.btDeleteRecord.Name = "btDeleteRecord";
-            this.btDeleteRecord.Size = new System.Drawing.Size(75, 23);
-            this.btDeleteRecord.TabIndex = 48;
-            this.btDeleteRecord.Text = "Delete";
-            this.btDeleteRecord.UseVisualStyleBackColor = true;
-            this.btDeleteRecord.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 

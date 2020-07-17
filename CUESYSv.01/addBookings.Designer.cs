@@ -67,7 +67,7 @@
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.ReadOnly = true;
             this.tbPrice.Size = new System.Drawing.Size(136, 20);
-            this.tbPrice.TabIndex = 75;
+            this.tbPrice.TabIndex = 7;
             this.tbPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lbDepartureTime
@@ -85,7 +85,7 @@
             this.mcDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 3.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mcDate.Location = new System.Drawing.Point(457, 68);
             this.mcDate.Name = "mcDate";
-            this.mcDate.TabIndex = 60;
+            this.mcDate.TabIndex = 9;
             // 
             // lbFlightOrigin
             // 
@@ -102,7 +102,7 @@
             this.tbDepart.Name = "tbDepart";
             this.tbDepart.ReadOnly = true;
             this.tbDepart.Size = new System.Drawing.Size(136, 20);
-            this.tbDepart.TabIndex = 57;
+            this.tbDepart.TabIndex = 3;
             // 
             // lbFlightDestination
             // 
@@ -119,7 +119,7 @@
             this.tbDestination.Name = "tbDestination";
             this.tbDestination.ReadOnly = true;
             this.tbDestination.Size = new System.Drawing.Size(136, 20);
-            this.tbDestination.TabIndex = 58;
+            this.tbDestination.TabIndex = 4;
             // 
             // lbSeatCapacity
             // 
@@ -146,7 +146,7 @@
             this.tbSeat.MaxLength = 3;
             this.tbSeat.Name = "tbSeat";
             this.tbSeat.Size = new System.Drawing.Size(136, 20);
-            this.tbSeat.TabIndex = 59;
+            this.tbSeat.TabIndex = 5;
             // 
             // lbFlightDeparture
             // 
@@ -181,7 +181,7 @@
             this.tbDuration.Name = "tbDuration";
             this.tbDuration.ReadOnly = true;
             this.tbDuration.Size = new System.Drawing.Size(136, 20);
-            this.tbDuration.TabIndex = 62;
+            this.tbDuration.TabIndex = 11;
             // 
             // lbCustName
             // 
@@ -212,7 +212,7 @@
             this.cbTicket.Location = new System.Drawing.Point(125, 209);
             this.cbTicket.Name = "cbTicket";
             this.cbTicket.Size = new System.Drawing.Size(136, 21);
-            this.cbTicket.TabIndex = 79;
+            this.cbTicket.TabIndex = 6;
             this.cbTicket.SelectedIndexChanged += new System.EventHandler(this.cbTicket_SelectedIndexChanged);
             // 
             // cbCustContact
@@ -222,7 +222,7 @@
             this.cbCustContact.Location = new System.Drawing.Point(125, 79);
             this.cbCustContact.Name = "cbCustContact";
             this.cbCustContact.Size = new System.Drawing.Size(136, 21);
-            this.cbCustContact.TabIndex = 80;
+            this.cbCustContact.TabIndex = 0;
             this.cbCustContact.SelectedIndexChanged += new System.EventHandler(this.cbCustContact_SelectedIndexChanged);
             // 
             // tbEmail
@@ -231,7 +231,7 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.ReadOnly = true;
             this.tbEmail.Size = new System.Drawing.Size(136, 20);
-            this.tbEmail.TabIndex = 81;
+            this.tbEmail.TabIndex = 2;
             // 
             // lbEmail
             // 
@@ -247,17 +247,17 @@
             this.btBook.Location = new System.Drawing.Point(53, 334);
             this.btBook.Name = "btBook";
             this.btBook.Size = new System.Drawing.Size(75, 23);
-            this.btBook.TabIndex = 83;
+            this.btBook.TabIndex = 12;
             this.btBook.Text = "Book";
             this.btBook.UseVisualStyleBackColor = true;
             this.btBook.Click += new System.EventHandler(this.btBook_Click);
             // 
             // btUpdate
             // 
-            this.btUpdate.Location = new System.Drawing.Point(140, 334);
+            this.btUpdate.Location = new System.Drawing.Point(53, 334);
             this.btUpdate.Name = "btUpdate";
             this.btUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btUpdate.TabIndex = 84;
+            this.btUpdate.TabIndex = 13;
             this.btUpdate.Text = "Update";
             this.btUpdate.UseVisualStyleBackColor = true;
             this.btUpdate.Visible = false;
@@ -269,7 +269,7 @@
             this.chkPaid.Location = new System.Drawing.Point(125, 263);
             this.chkPaid.Name = "chkPaid";
             this.chkPaid.Size = new System.Drawing.Size(14, 15);
-            this.chkPaid.TabIndex = 85;
+            this.chkPaid.TabIndex = 8;
             this.chkPaid.UseVisualStyleBackColor = true;
             // 
             // lbPaid
@@ -315,7 +315,7 @@
             this.tbDepTime.Name = "tbDepTime";
             this.tbDepTime.ReadOnly = true;
             this.tbDepTime.Size = new System.Drawing.Size(136, 20);
-            this.tbDepTime.TabIndex = 90;
+            this.tbDepTime.TabIndex = 10;
             // 
             // addBookings
             // 
@@ -328,7 +328,6 @@
             this.Controls.Add(this.dgCustData);
             this.Controls.Add(this.chkPaid);
             this.Controls.Add(this.lbPaid);
-            this.Controls.Add(this.btUpdate);
             this.Controls.Add(this.btBook);
             this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.tbEmail);
@@ -350,6 +349,7 @@
             this.Controls.Add(this.lbEstimate);
             this.Controls.Add(this.lbPrice);
             this.Controls.Add(this.tbDuration);
+            this.Controls.Add(this.btUpdate);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "addBookings";
             this.Text = "addBookings";

@@ -30,7 +30,6 @@
         {
             this.lbCustContact = new System.Windows.Forms.Label();
             this.tbCustContact = new System.Windows.Forms.TextBox();
-            this.btCustDelete = new System.Windows.Forms.Button();
             this.lbCustEmail = new System.Windows.Forms.Label();
             this.tbCustEmail = new System.Windows.Forms.TextBox();
             this.btCustSave = new System.Windows.Forms.Button();
@@ -53,7 +52,7 @@
             // lbCustContact
             // 
             this.lbCustContact.AutoSize = true;
-            this.lbCustContact.Location = new System.Drawing.Point(43, 103);
+            this.lbCustContact.Location = new System.Drawing.Point(35, 40);
             this.lbCustContact.Name = "lbCustContact";
             this.lbCustContact.Size = new System.Drawing.Size(91, 13);
             this.lbCustContact.TabIndex = 31;
@@ -61,24 +60,15 @@
             // 
             // tbCustContact
             // 
-            this.tbCustContact.Location = new System.Drawing.Point(147, 100);
+            this.tbCustContact.Location = new System.Drawing.Point(139, 37);
             this.tbCustContact.Name = "tbCustContact";
             this.tbCustContact.Size = new System.Drawing.Size(100, 20);
-            this.tbCustContact.TabIndex = 32;
-            // 
-            // btCustDelete
-            // 
-            this.btCustDelete.Location = new System.Drawing.Point(147, 356);
-            this.btCustDelete.Name = "btCustDelete";
-            this.btCustDelete.Size = new System.Drawing.Size(100, 23);
-            this.btCustDelete.TabIndex = 48;
-            this.btCustDelete.Text = "Delete";
-            this.btCustDelete.UseVisualStyleBackColor = true;
+            this.tbCustContact.TabIndex = 1;
             // 
             // lbCustEmail
             // 
             this.lbCustEmail.AutoSize = true;
-            this.lbCustEmail.Location = new System.Drawing.Point(43, 128);
+            this.lbCustEmail.Location = new System.Drawing.Point(35, 65);
             this.lbCustEmail.Name = "lbCustEmail";
             this.lbCustEmail.Size = new System.Drawing.Size(72, 13);
             this.lbCustEmail.TabIndex = 33;
@@ -86,17 +76,17 @@
             // 
             // tbCustEmail
             // 
-            this.tbCustEmail.Location = new System.Drawing.Point(147, 125);
+            this.tbCustEmail.Location = new System.Drawing.Point(139, 62);
             this.tbCustEmail.Name = "tbCustEmail";
             this.tbCustEmail.Size = new System.Drawing.Size(100, 20);
-            this.tbCustEmail.TabIndex = 34;
+            this.tbCustEmail.TabIndex = 2;
             // 
             // btCustSave
             // 
-            this.btCustSave.Location = new System.Drawing.Point(147, 327);
+            this.btCustSave.Location = new System.Drawing.Point(139, 264);
             this.btCustSave.Name = "btCustSave";
             this.btCustSave.Size = new System.Drawing.Size(100, 23);
-            this.btCustSave.TabIndex = 46;
+            this.btCustSave.TabIndex = 9;
             this.btCustSave.Text = "Save";
             this.btCustSave.UseVisualStyleBackColor = true;
             this.btCustSave.Click += new System.EventHandler(this.btCustSave_Click);
@@ -104,7 +94,7 @@
             // lbCustTel
             // 
             this.lbCustTel.AutoSize = true;
-            this.lbCustTel.Location = new System.Drawing.Point(43, 154);
+            this.lbCustTel.Location = new System.Drawing.Point(35, 91);
             this.lbCustTel.Name = "lbCustTel";
             this.lbCustTel.Size = new System.Drawing.Size(98, 13);
             this.lbCustTel.TabIndex = 35;
@@ -114,7 +104,7 @@
             // 
             this.lbCustTitle.AutoSize = true;
             this.lbCustTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCustTitle.Location = new System.Drawing.Point(78, 72);
+            this.lbCustTitle.Location = new System.Drawing.Point(70, 9);
             this.lbCustTitle.Name = "lbCustTitle";
             this.lbCustTitle.Size = new System.Drawing.Size(146, 20);
             this.lbCustTitle.TabIndex = 45;
@@ -122,22 +112,22 @@
             // 
             // tbCustTel
             // 
-            this.tbCustTel.Location = new System.Drawing.Point(147, 151);
+            this.tbCustTel.Location = new System.Drawing.Point(139, 88);
             this.tbCustTel.Name = "tbCustTel";
             this.tbCustTel.Size = new System.Drawing.Size(100, 20);
-            this.tbCustTel.TabIndex = 36;
+            this.tbCustTel.TabIndex = 3;
             // 
             // tbCustPostcode
             // 
-            this.tbCustPostcode.Location = new System.Drawing.Point(147, 254);
+            this.tbCustPostcode.Location = new System.Drawing.Point(139, 191);
             this.tbCustPostcode.Name = "tbCustPostcode";
             this.tbCustPostcode.Size = new System.Drawing.Size(100, 20);
-            this.tbCustPostcode.TabIndex = 44;
+            this.tbCustPostcode.TabIndex = 7;
             // 
             // lbCustAdd1
             // 
             this.lbCustAdd1.AutoSize = true;
-            this.lbCustAdd1.Location = new System.Drawing.Point(43, 180);
+            this.lbCustAdd1.Location = new System.Drawing.Point(35, 117);
             this.lbCustAdd1.Name = "lbCustAdd1";
             this.lbCustAdd1.Size = new System.Drawing.Size(77, 13);
             this.lbCustAdd1.TabIndex = 37;
@@ -146,7 +136,7 @@
             // lbCustPostcode
             // 
             this.lbCustPostcode.AutoSize = true;
-            this.lbCustPostcode.Location = new System.Drawing.Point(43, 257);
+            this.lbCustPostcode.Location = new System.Drawing.Point(35, 194);
             this.lbCustPostcode.Name = "lbCustPostcode";
             this.lbCustPostcode.Size = new System.Drawing.Size(52, 13);
             this.lbCustPostcode.TabIndex = 43;
@@ -154,22 +144,22 @@
             // 
             // tbCustAdd1
             // 
-            this.tbCustAdd1.Location = new System.Drawing.Point(147, 177);
+            this.tbCustAdd1.Location = new System.Drawing.Point(139, 114);
             this.tbCustAdd1.Name = "tbCustAdd1";
             this.tbCustAdd1.Size = new System.Drawing.Size(100, 20);
-            this.tbCustAdd1.TabIndex = 38;
+            this.tbCustAdd1.TabIndex = 4;
             // 
             // tbCustTownCity
             // 
-            this.tbCustTownCity.Location = new System.Drawing.Point(147, 228);
+            this.tbCustTownCity.Location = new System.Drawing.Point(139, 165);
             this.tbCustTownCity.Name = "tbCustTownCity";
             this.tbCustTownCity.Size = new System.Drawing.Size(100, 20);
-            this.tbCustTownCity.TabIndex = 42;
+            this.tbCustTownCity.TabIndex = 6;
             // 
             // lbCustAdd2
             // 
             this.lbCustAdd2.AutoSize = true;
-            this.lbCustAdd2.Location = new System.Drawing.Point(43, 205);
+            this.lbCustAdd2.Location = new System.Drawing.Point(35, 142);
             this.lbCustAdd2.Name = "lbCustAdd2";
             this.lbCustAdd2.Size = new System.Drawing.Size(77, 13);
             this.lbCustAdd2.TabIndex = 39;
@@ -178,7 +168,7 @@
             // lbCustTownCity
             // 
             this.lbCustTownCity.AutoSize = true;
-            this.lbCustTownCity.Location = new System.Drawing.Point(43, 231);
+            this.lbCustTownCity.Location = new System.Drawing.Point(35, 168);
             this.lbCustTownCity.Name = "lbCustTownCity";
             this.lbCustTownCity.Size = new System.Drawing.Size(62, 13);
             this.lbCustTownCity.TabIndex = 41;
@@ -186,14 +176,14 @@
             // 
             // tbCustAdd2
             // 
-            this.tbCustAdd2.Location = new System.Drawing.Point(147, 202);
+            this.tbCustAdd2.Location = new System.Drawing.Point(139, 139);
             this.tbCustAdd2.Name = "tbCustAdd2";
             this.tbCustAdd2.Size = new System.Drawing.Size(100, 20);
-            this.tbCustAdd2.TabIndex = 40;
+            this.tbCustAdd2.TabIndex = 5;
             // 
             // btCustUpdate
             // 
-            this.btCustUpdate.Location = new System.Drawing.Point(147, 327);
+            this.btCustUpdate.Location = new System.Drawing.Point(139, 264);
             this.btCustUpdate.Name = "btCustUpdate";
             this.btCustUpdate.Size = new System.Drawing.Size(100, 23);
             this.btCustUpdate.TabIndex = 47;
@@ -203,7 +193,7 @@
             // lbNationality
             // 
             this.lbNationality.AutoSize = true;
-            this.lbNationality.Location = new System.Drawing.Point(43, 284);
+            this.lbNationality.Location = new System.Drawing.Point(35, 221);
             this.lbNationality.Name = "lbNationality";
             this.lbNationality.Size = new System.Drawing.Size(56, 13);
             this.lbNationality.TabIndex = 49;
@@ -211,21 +201,20 @@
             // 
             // tbNationality
             // 
-            this.tbNationality.Location = new System.Drawing.Point(147, 280);
+            this.tbNationality.Location = new System.Drawing.Point(139, 217);
             this.tbNationality.Name = "tbNationality";
             this.tbNationality.Size = new System.Drawing.Size(100, 20);
-            this.tbNationality.TabIndex = 50;
+            this.tbNationality.TabIndex = 8;
             // 
             // addCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(289, 450);
+            this.ClientSize = new System.Drawing.Size(289, 313);
             this.Controls.Add(this.tbNationality);
             this.Controls.Add(this.lbNationality);
             this.Controls.Add(this.lbCustContact);
             this.Controls.Add(this.tbCustContact);
-            this.Controls.Add(this.btCustDelete);
             this.Controls.Add(this.lbCustEmail);
             this.Controls.Add(this.tbCustEmail);
             this.Controls.Add(this.btCustSave);
@@ -253,7 +242,6 @@
 
         private System.Windows.Forms.Label lbCustContact;
         private System.Windows.Forms.TextBox tbCustContact;
-        private System.Windows.Forms.Button btCustDelete;
         private System.Windows.Forms.Label lbCustEmail;
         private System.Windows.Forms.TextBox tbCustEmail;
         private System.Windows.Forms.Button btCustSave;

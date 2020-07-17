@@ -1,0 +1,17 @@
+17/07/2020 16:23:07 --- resetControls triggered
+17/07/2020 16:23:07 --- Login controls visible
+17/07/2020 16:23:07 --- Focus changed to Program started
+17/07/2020 16:23:07 --- Program started
+17/07/2020 16:23:11 --- Login button clicked
+17/07/2020 16:23:11 --- resetControls triggered
+17/07/2020 16:23:11 --- Focus changed to login
+17/07/2020 16:23:11 --- Login success for user admin
+17/07/2020 16:23:11 --- enter key detected in tbUserPass
+17/07/2020 16:23:18 --- resetControls triggered
+17/07/2020 16:23:18 --- SELECT * FROM `tblBookings` WHERE `bookingDateTime` >= CURDATE() sql run
+17/07/2020 16:23:19 --- Focus changed to landing
+17/07/2020 16:23:19 --- show bookings
+17/07/2020 16:23:22 --- resetControls triggered
+17/07/2020 16:23:22 --- SELECT * FROM `tblBookings` WHERE `bookingDateTime` >= CURDATE() sql run
+17/07/2020 16:23:22 --- Focus changed to landing
+17/07/2020 16:23:22 --- show bookings

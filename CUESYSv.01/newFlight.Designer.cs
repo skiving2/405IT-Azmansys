@@ -30,7 +30,6 @@
         {
             this.lbFlightOrigin = new System.Windows.Forms.Label();
             this.tbOrigin = new System.Windows.Forms.TextBox();
-            this.btFlightDelete = new System.Windows.Forms.Button();
             this.lbFlightDestination = new System.Windows.Forms.Label();
             this.tbDestination = new System.Windows.Forms.TextBox();
             this.btFlightSave = new System.Windows.Forms.Button();
@@ -69,16 +68,6 @@
             this.tbOrigin.Size = new System.Drawing.Size(100, 20);
             this.tbOrigin.TabIndex = 1;
             // 
-            // btFlightDelete
-            // 
-            this.btFlightDelete.Location = new System.Drawing.Point(379, 326);
-            this.btFlightDelete.Name = "btFlightDelete";
-            this.btFlightDelete.Size = new System.Drawing.Size(100, 23);
-            this.btFlightDelete.TabIndex = 48;
-            this.btFlightDelete.Text = "Delete";
-            this.btFlightDelete.UseVisualStyleBackColor = true;
-            this.btFlightDelete.Visible = false;
-            // 
             // lbFlightDestination
             // 
             this.lbFlightDestination.AutoSize = true;
@@ -100,7 +89,7 @@
             this.btFlightSave.Location = new System.Drawing.Point(273, 326);
             this.btFlightSave.Name = "btFlightSave";
             this.btFlightSave.Size = new System.Drawing.Size(100, 23);
-            this.btFlightSave.TabIndex = 8;
+            this.btFlightSave.TabIndex = 10;
             this.btFlightSave.Text = "Save";
             this.btFlightSave.UseVisualStyleBackColor = true;
             this.btFlightSave.Click += new System.EventHandler(this.btFlightSave_Click);
@@ -164,15 +153,15 @@
             this.tbDuration.Location = new System.Drawing.Point(360, 233);
             this.tbDuration.Name = "tbDuration";
             this.tbDuration.Size = new System.Drawing.Size(100, 20);
-            this.tbDuration.TabIndex = 6;
+            this.tbDuration.TabIndex = 9;
             this.tbDuration.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrice_KeyPress);
             // 
             // btFlightUpdate
             // 
-            this.btFlightUpdate.Location = new System.Drawing.Point(167, 326);
+            this.btFlightUpdate.Location = new System.Drawing.Point(273, 326);
             this.btFlightUpdate.Name = "btFlightUpdate";
             this.btFlightUpdate.Size = new System.Drawing.Size(100, 23);
-            this.btFlightUpdate.TabIndex = 47;
+            this.btFlightUpdate.TabIndex = 11;
             this.btFlightUpdate.Text = "Update";
             this.btFlightUpdate.UseVisualStyleBackColor = true;
             this.btFlightUpdate.Visible = false;
@@ -192,7 +181,7 @@
             this.tbChild.Name = "tbChild";
             this.tbChild.ReadOnly = true;
             this.tbChild.Size = new System.Drawing.Size(100, 20);
-            this.tbChild.TabIndex = 51;
+            this.tbChild.TabIndex = 5;
             this.tbChild.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tbInfant
@@ -201,7 +190,7 @@
             this.tbInfant.Name = "tbInfant";
             this.tbInfant.ReadOnly = true;
             this.tbInfant.Size = new System.Drawing.Size(100, 20);
-            this.tbInfant.TabIndex = 52;
+            this.tbInfant.TabIndex = 6;
             this.tbInfant.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lbChild
@@ -227,7 +216,7 @@
             this.mcDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 3.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mcDate.Location = new System.Drawing.Point(360, 37);
             this.mcDate.Name = "mcDate";
-            this.mcDate.TabIndex = 4;
+            this.mcDate.TabIndex = 7;
             // 
             // dtDepTime
             // 
@@ -237,7 +226,7 @@
             this.dtDepTime.Name = "dtDepTime";
             this.dtDepTime.ShowUpDown = true;
             this.dtDepTime.Size = new System.Drawing.Size(100, 20);
-            this.dtDepTime.TabIndex = 5;
+            this.dtDepTime.TabIndex = 8;
             this.dtDepTime.Value = new System.DateTime(2020, 7, 9, 9, 0, 0, 0);
             // 
             // tbPrice
@@ -245,7 +234,7 @@
             this.tbPrice.Location = new System.Drawing.Point(132, 179);
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.Size = new System.Drawing.Size(100, 20);
-            this.tbPrice.TabIndex = 56;
+            this.tbPrice.TabIndex = 4;
             this.tbPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbPrice.TextChanged += new System.EventHandler(this.tbPrice_TextChanged);
             this.tbPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPrice_KeyPress);
@@ -266,7 +255,6 @@
             this.Controls.Add(this.mcDate);
             this.Controls.Add(this.lbFlightOrigin);
             this.Controls.Add(this.tbOrigin);
-            this.Controls.Add(this.btFlightDelete);
             this.Controls.Add(this.lbFlightDestination);
             this.Controls.Add(this.tbDestination);
             this.Controls.Add(this.btFlightSave);
@@ -291,7 +279,6 @@
 
         private System.Windows.Forms.Label lbFlightOrigin;
         private System.Windows.Forms.TextBox tbOrigin;
-        private System.Windows.Forms.Button btFlightDelete;
         private System.Windows.Forms.Label lbFlightDestination;
         private System.Windows.Forms.TextBox tbDestination;
         private System.Windows.Forms.Button btFlightSave;
